@@ -1,0 +1,56 @@
+/*****************************全局样式*************************************************/
+* {margin:0; padding:0;}
+html{font-size: 10px;}
+body {
+	font-family:"Microsoft yahei" !important; 
+	-webkit-overflow-scrolling:touch;/*流畅滚动*/
+}
+a{text-decoration:none;}
+ul{list-style:none;}
+a,button,input,optgroup,select,textarea {
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+a, img {
+    -webkit-touch-callout: none; /*禁止长按链接与图片弹出菜单*/
+}
+/*****************************页面样式*************************************************/
+.wwc_hbox{width:100%;height:3.022222rem;line-height:3.022222rem;background-color:#f8f8f8;color:#888;font-size:12px;border-bottom:1px solid #dfdfdf;}
+.wwc_h{padding-left:1.066667rem;}
+.wwcfw_box{width:100%;height:3.057778rem;border-bottom:1px solid #dfdfdf;}
+.wwc_fw{width:92%;margin:0 auto;height:3.057778rem;}
+.wwcfw_l{height:3.057778rem;line-height:3.057778rem;font-size:1.5rem;color:#333;float:left;}
+.wwcfw_r{height:3.057778rem;line-height:3.057778rem;font-size:1.5rem;color:#333;float:right;}
+.wwc_c1box{width:100%;height:10.66667rem;}
+.wwc_c1{width:92%;margin:0 auto;height:10.66667rem;}
+.wwcc1_lbox{width:20.6%;height:8.071111rem;margin-top:0.924444rem;float:left;}
+.wwcc1_l{width:5.048889rem;height:8.071111rem;background-image:url(../images/my_orders/yuesao_six.png);background-size:100% 100%;}
+.wwcc1_r{width:74.2%;height:8.462222rem;margin-left:1.06667rem;float:left;}
+.wwcc1r_1{width:4.62222rem;height:1.386667rem;border:1px solid #eea21b;border-radius:10px;float:right;font-size:12px;text-align:center;color:#eea21b;margin-top:0.675556rem;}
+.wwcc1r_2box{height:1.6rem;margin-top:0.568888rem;}
+.wwcc1r2b_l{float:left;font-size:14px;}
+.wwcc1r2b_r{float:left;width:5.582222rem;height:0.853333rem;margin-left:0.568888rem;margin-top:0.15rem;}
+.wwcc1r2b_r img{display:inline-block;height:auto;max-width:100%;}
+.wwcc1r_3box{height:1.6rem;margin-top:0.568888rem;}
+.wwcc1r_31{font-size:12px;color:#888;}
+.wwcc1r_32{font-size:14px;color:#ef4f4f;}
+.wwcc1r_4box{font-size:12px;color:#888;margin-top:0.2rem;}
+
+.wwc_c2box{width:100%;height:3.022222rem;}
+.wwcc2b_l{float:left;width:26.5%;height:3.022222rem;line-height:3.022222rem;border-top:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;border-right:1px solid #dfdfdf;font-size:12px;text-align:center;color:#333;}
+.wwcc2b_m{float:left;width:26.5%;height:3.022222rem;line-height:3.022222rem;border-top:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;font-size:12px;text-align:center;color:#333;}
+.wwcc2b_r{float:left;width:46.6%;height:3.022222rem;line-height:3.022222rem;border-top:1px solid #ff72ae;border-bottom:1px solid #ff72ae;background-color:#ff72ae;font-size:12px;text-align:center;color:#fff;}
+
+.wwc_c3box{width:100%;height:1.351111rem;background-color:#f8f8f8;border-bottom:1px solid #dfdfdf;}
+
+.wwcc1r_11{width:4.62222rem;height:1.386667rem;border:1px solid #ef4f4f;border-radius:10px;float:right;font-size:12px;text-align:center;color:#ef4f4f;margin-top:0.675556rem;}
+.wwcc1r_12{width:4.62222rem;height:1.386667rem;border:1px solid #23dab1;border-radius:10px;float:right;font-size:12px;text-align:center;color:#23dab1;margin-top:0.675556rem;}
+
+.wwcc2b_r1{float:left;width:46.3%;height:3.022222rem;line-height:3.022222rem;border-top:1px solid #dfdfdf;border-left:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;background-color:#fff;font-size:12px;text-align:center;color:#b2b2b2;}
+
+.wwcc2b_r12{float:left;width:46.6%;height:3.022222rem;line-height:3.022222rem;border-top:1px solid #23dab1;border-bottom:1px solid #23dab1;background-color:#23dab1;font-size:12px;text-align:center;color:#fff;}
+
+
+.situation1{width:100%;}
+.situation2{width:100%;}
+.situation3{width:100%;}
+.situation4{width:100%;}

@@ -1,0 +1,96 @@
+/*****************************全局样式*************************************************/
+* {margin:0; padding:0;}
+html{font-size: 10px;}
+body {
+	font-family:"Microsoft yahei" !important; 
+	-webkit-overflow-scrolling:touch;/*流畅滚动*/
+}
+a{text-decoration:none;}
+ul{list-style:none;}
+a,button,input,optgroup,select,textarea {
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+a, img {
+    -webkit-touch-callout: none; /*禁止长按链接与图片弹出菜单*/
+}
+/*****************************页面样式*************************************************/
+.header{width:100%;height:2.84444rem;} 
+.hr_1box{width:24.5%;float:left;height:2.84444rem;margin-top:0.71111rem;font-size:1.35rem;}
+.hr_1{width:100%;float:left;height:1.066667rem;line-height:1.066667rem;border-right:1px solid #dfdfdf;text-align:center;}
+.hr1_l{float:left;margin-left:2.13333rem;color:#ff72ae;}
+.hr1_r{float:left;width:0.675556rem;height:0.355556rem;margin-left:0.71111rem;margin-top:-0.2rem;}
+.hr1_r img{display:inline-block;height:auto;max-width:100%;}
+
+.hr_2box{width:24.5%;float:left;height:2.84444rem;margin-top:0.71111rem;font-size:1.35rem;}
+.hr_2{width:100%;float:left;height:1.066667rem;line-height:1.066667rem;border-right:1px solid #dfdfdf;text-align:center;}
+.hr2_l{float:left;margin-left:2.13333rem;color:#323232;}
+.hr2_r{float:left;width:0.675556rem;height:0.355556rem;margin-left:0.71111rem;margin-top:-0.2rem;}
+.hr2_r img{display:inline-block;height:auto;max-width:100%;}
+
+.hr_3box{width:24.5%;float:left;height:2.84444rem;margin-top:0.71111rem;font-size:1.35rem;}
+.hr_3{width:100%;float:left;height:1.066667rem;line-height:1.066667rem;border-right:1px solid #dfdfdf;text-align:center;}
+.hr3_l{float:left;margin-left:2.13333rem;color:#323232;}
+.hr3_r{float:left;width:0.675556rem;height:0.355556rem;margin-left:0.71111rem;margin-top:-0.2rem;}
+.hr3_r img{display:inline-block;height:auto;max-width:100%;}
+
+.hr_4box{width:24.5%;float:left;height:2.84444rem;margin-top:0.71111rem;font-size:1.35rem;}
+.hr_4{width:100%;float:left;height:1.066667rem;line-height:1.066667rem;text-align:center;}
+.hr4_l{float:left;margin-left:2.13333rem;color:#323232;}
+.hr4_r{float:left;width:0.675556rem;height:0.355556rem;margin-left:0.71111rem;margin-top:-0.2rem;}
+.hr4_r img{display:inline-block;height:auto;max-width:100%;}
+
+.content1{width:100%;height:11.73333rem;}
+.c1_hr{width:100%;height:0.995556rem;border-top:2px solid #dfdfdf;background-color:#f8f8f8;}
+.c1_c{width:92%;height:10.66667rem;margin:0 auto;}
+.c1c_l{width:20.6%;height:8.071111rem;margin-top:0.924444rem;float:left;}
+.c1cl_bg1{width:5.048889rem;height:8.071111rem;background-image:url(../images/yuesao_lists/yuesao_six.png);background-size:100% 100%;}
+.c1cl_bg2{width:5.048889rem;height:7.288889rem;background-image:url(../images/yuesao_lists/yuesao_five.png);background-size:100% 100%;}
+.c1cl_bg3{width:5.048889rem;height:6.933333rem;background-image:url(../images/yuesao_lists/yuesao_four.png);background-size:100% 100%;}
+.c1cl_bg4{width:5.048889rem;height:7.288889rem;background-image:url(../images/yuesao_lists/yuesao_three.png);background-size:100% 100%;}
+
+.c1c_r{width:74.2%;height:8.462222rem;margin-top:0.924444rem;margin-left:1.06667rem;float:left;}
+.c1cr_1{width:100%;height:1.4rem;}
+.c1cr1_1{font-size:12px;float:left;}
+.c1cr1_2{float:left;width:5.58222rem;height:1.4rem;margin-top:0.05rem;margin-left:0.35rem;}
+.c1cr1_2 img{display:inline-block;height:auto;max-width:100%;}
+.c1cr1_3{float:left;margin-left:1.77778rem;}
+.c1cr13_1{float:left;width:0.64rem;height:0.568889rem;margin-right:0.177778rem;}
+.c1cr13_1 img{display:inline-block;height:auto;max-width:100%;}
+.c1cr13_2{float:left;width:0.64rem;height:0.568889rem;margin-right:0.177778rem;}
+.c1cr13_2 img{display:inline-block;height:auto;max-width:100%;}
+.c1cr1_4{font-size:12px;float:right;}
+.c1cr_2{width:100%;height:2.773333rem;font-size:12px;color:#6a6a6a;margin-top:1.4rem;}
+.c1cr_3{margin-top:1.2rem;}
+.c1cr3_1{font-size:14px;color:#ff72ae;font-weight:bold;}
+.c1cr3_2{font-size:12px;color:#6a6a6a;}
+
+
+.yslists_b{width:100%;height:3.697778rem;background-color:#f8f8f8;border-top:2px solid #dfdfdf;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

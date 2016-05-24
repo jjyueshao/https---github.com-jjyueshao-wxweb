@@ -1,0 +1,43 @@
+/*****************************全局样式*************************************************/
+* {margin:0; padding:0;}
+html{font-size: 10px;}
+body {
+	font-family:"Microsoft yahei" !important; 
+	-webkit-overflow-scrolling:touch;/*流畅滚动*/
+}
+a{text-decoration:none;}
+ul{list-style:none;}
+a,button,input,optgroup,select,textarea {
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+a, img {
+    -webkit-touch-callout: none; /*禁止长按链接与图片弹出菜单*/
+}
+/*****************************页面样式*************************************************/
+.content1{width:100%;height:3.057778rem;line-height:3.057778rem;border-bottom:1px solid #dfdfdf;font-size:1.65rem;color:#888;padding-left:1.066667rem;background-color:#f8f8f8;}
+.content2{width:100%;height:3.057778rem;line-height:3.057778rem;border-bottom:1px solid #dfdfdf;font-size:1.65rem;color:#333;}
+.c2_l{float:left;margin-left:1.066667rem;}
+.c2_r{float:right;margin-right:1.066667rem;}
+
+.content4{width:100%;height:3.057778rem;line-height:3.057778rem;border-bottom:1px solid #dfdfdf;font-size:1.65rem;}
+.c4_l{float:left;margin-left:1.066667rem;color:#333;}
+.c4_r{float:right;margin-right:1.066667rem;color:#ef4f4f;}
+
+.content6{width:100%;height:3.057778rem;line-height:3.057778rem;border-bottom:1px solid #dfdfdf;font-size:1.65rem;color:#333;}
+.c6_l1{float:left;width:1.42222rem;height:1.42222rem;margin-left:1.066667rem;}
+.c6_l1 img{display:inline-block;height:auto;max-width:100%;}
+.c6_l2{float:left;margin-left:0.71111rem;}
+.c6_r{float:right;margin-right:1.066667rem;}
+
+.content9{width:100%;height:4.977778rem;border-bottom:1px solid #dfdfdf;}
+.c9_1{float:left;width:1.42222rem;height:1.42222rem;margin-left:1.066667rem;margin-top:1.77778rem;}
+.c9_1 img{display:inline-block;height:auto;max-width:100%;}
+.c9_2{float:left;width:3.413333rem;height:3.413333rem;margin-left:0.71111rem;margin-top:0.782777rem;}
+.c9_2 img{display:inline-block;height:auto;max-width:100%;}
+.c9_3{margin-left:0.71111rem;height:3.413333rem;float:left;margin-top:0.88889rem;}
+.c9_p1{font-size:1.65rem;height:1.56444rem;}
+.c9_p2{font-size:1rem;height:1.24444rem;margin-top:0.4rem;}
+
+.content11{width:100%;height:4.835556rem;background-color:#f8f8f8;}
+
+.content12{width:100%;height:3.555556rem;line-height:3.555556rem;background-color:#ff72ae;color:#fff;text-align:center;font-size:2rem;}

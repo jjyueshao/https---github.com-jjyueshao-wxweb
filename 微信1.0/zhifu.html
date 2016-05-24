@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>支付</title>
+<link rel="stylesheet" href="data/css/zhifu.css">
+<link href="data/css/common.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="data/js/jquery-1.9.1.js" ></script>
+<script type="text/javascript" src="data/js/date.js" ></script>
+<script type="text/javascript" src="data/js/iscroll.js" ></script>
+<script type="text/javascript">
+   var html = document.querySelector('html');
+   var rem = html.offsetWidth*20/640;
+   html.style.fontSize = rem + "px";
+</script>
+<script type="text/javascript">
+function changeCheckbox() {
+	var mylabel = document.getElementById('formyCheckBox');
+	if (mylabel.innerHTML == "√")
+		mylabel.innerHTML = "";
+	else
+		mylabel.innerHTML = "√";
+	}
+</script>
+<script type="text/javascript">
+$(function(){
+	var d = new Date();
+	var str = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+	var beginTime = document.getElementById("beginTime");
+	beginTime.value = str;
+});
+</script>
+<script type="text/javascript">
+$(function(){
+	$('#beginTime').date();
+	$('#endTime').date({theme:"datetime"});
+});
+</script>
+<script type="text/javascript">
+window.onload = function() {
+	$("#danbaotai").click(function () {
+		$("#danbaotai").css("background-color","#ff72ae");
+		$("#danbaotai").css("color","#fff");
+		$("#shuangbaotai").css("background-color","#fff");
+		$("#shuangbaotai").css("color","#ff72ae");
+	});
+	
+	$("#shuangbaotai").click(function () {
+		$("#shuangbaotai").css("background-color","#ff72ae");
+		$("#shuangbaotai").css("color","#fff");
+		$("#danbaotai").css("background-color","#fff");
+		$("#danbaotai").css("color","#ff72ae");
+	});
+	
+	$("#taocan1").click(function () {
+		$("#taocan1").css("background-color","#ff72ae");
+		$("#taocan1").css("color","#fff");
+		$("#taocan2").css("background-color","#fff");
+		$("#taocan2").css("color","#ff72ae");
+		$("#taocan3").css("background-color","#fff");
+		$("#taocan3").css("color","#ff72ae");
+	});
+	
+	$("#taocan2").click(function () {
+		$("#taocan2").css("background-color","#ff72ae");
+		$("#taocan2").css("color","#fff");
+		$("#taocan1").css("background-color","#fff");
+		$("#taocan1").css("color","#ff72ae");
+		$("#taocan3").css("background-color","#fff");
+		$("#taocan3").css("color","#ff72ae");
+	});
+	
+	$("#taocan3").click(function () {
+		$("#taocan3").css("background-color","#ff72ae");
+		$("#taocan3").css("color","#fff");
+		$("#taocan2").css("background-color","#fff");
+		$("#taocan2").css("color","#ff72ae");
+		$("#taocan1").css("background-color","#fff");
+		$("#taocan1").css("color","#ff72ae");
+	});
+	
+};
+</script>
+</head>
+<body id="tbody"> 
+<div class="content_box">
+
+	<div class="content1">
+		<div class="yuesao_photo"></div>
+		<div class="yuesao_jianjie">
+			<div class="yuesao">
+            	<div class="yuesao_name">蔡明姣</div>
+                <div class="yuesao_rz"><img src="data/images/zhifu/renzheng_2x.png"/></div>
+            </div>
+            <div style="clear:both;"></div>
+			<div><span style="font-size:1rem;color:#888;">服务项目：</span><span style="font-size:2rem;color:#333;">26天月子服务</span></div>
+		</div>
+	</div>
+    
+    <div class="line_style">
+    	<div class="ls_text">服务信息</div>
+    </div>
+    
+    <!--<form>-->
+    	<div class="demo">
+        	<div class="lie" style="margin-left:4%;color:#333;font-size:1.65rem;">
+            	预约时间  <input  id="beginTime" class="kbtn" value=""/>
+            	<div class="xzk"><img src="data/images/zhifu/right_2x.png"/></div>
+            </div>
+   		</div>
+        <div id="datePlugin"></div>
+    
+    	<div class="baobei_sl">
+    		<div class="bb_title">宝贝数量</div>
+        	<div class="slxz">
+        		<button id="danbaotai" class="danbaotai" value="1">单胞胎</button>
+            	<button id="shuangbaotai" class="shuangbaotai" value="2">双胞胎</button>
+        	</div>
+    	</div>
+        
+        <div class="fuwu_ts">
+    		<div class="fw_title">服务天数</div>
+        	<div class="tsxz">
+        		<button id="taocan1" class="taocan1" value="1">26天</button>
+            	<button id="taocan2" class="taocan2" value="2">42天</button>
+                <button id="taocan3" class="taocan2" value="3">78天</button>
+        	</div>
+    	</div>
+        
+        <div class="line_style1">
+    		<div class="ls_text">联系信息</div>
+   		</div>
+        
+        <div class="lianxiren">
+        	<span class="lxr_tt">联系人</span><input class="lxr_xx" value="联系人" onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#b2b2b2'}" style="color:#b2b2b2"/>
+        </div>
+        
+        <div class="lianxidianhua">
+        	<span class="lxdh_tt">联系电话</span><input class="lxdh_xx" value="联系电话" onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#b2b2b2'}" style="color:#b2b2b2"/>
+        </div>
+        
+        <div class="xuanzediqu">
+        	<span class="xzdq_tt">选择地区</span><span class="xzdq_xx">广东省 深圳市 南山区</span><div class="xzk1"><img src="data/images/zhifu/right_2x.png"/></div>
+        </div>
+        
+        <div class="lianxidianhua">
+        	<span class="lxdh_tt">详细地址</span><input class="lxdh_xx" value="街道、楼栋、门牌号等" onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#b2b2b2'}" style="color:#b2b2b2"/>
+        </div>
+        
+        <div class="line_style1">
+    		<div class="ls_text">费用合计</div>
+   		</div>
+        
+        <div class="fw_zj">
+        	<div class="fwzj_box">
+            	<div class="fwzj_left">26天月子服务</div>
+                <div class="fwzj_right">￥8700元</div>
+            </div>
+            <div class="xzk2"><img src="data/images/zhifu/right_2x.png"/></div>
+        </div>
+        
+        <div class="fw_zj">
+        	<div class="fwzj_box">
+            	<div class="fwzj_left">优惠券</div>
+                <div class="fwzj_right">￥500元</div>
+            </div>
+        </div>
+        
+        <div class="daizhifu">
+        	<div class="dzf_box">
+            	<div class="dzf_left">待支付</div>
+                <div class="dzf_right">￥8300元</div>
+            </div>
+        </div>
+        
+        <div class="wenxintishi">
+        	<div class="wxts_box">温馨提示：月子服务期间，如遇国家法定节假日，需另外支付200元/天。</div>
+        </div>
+        
+        <div class="line_style1">
+    		<div class="ls_text">备注</div>
+   		</div>
+        
+        <div class="beizhu">
+        	<div class="bz_box">
+            	<span>备注您的特殊要求，我们会尽量满足。</span>
+                <div class="jishu">
+                	<span>0/200</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="line_small"></div>
+        
+        <div class="tiaokuan">
+        	<div class="tk_box">
+        		<label id="formyCheckBox" for="modeCheckBox" onclick="changeCheckbox()" class="comList_forCheckbox"></label>
+　　				<input type="checkbox" id="myCheckBox" class="comList_checkbox" />
+			</div>
+			<div class="tongyi">同意</div>
+            <div class="fuwuxieyi"><a>《26天月子服务》</a></div>
+            <div class="tongyi">相关条款</div>
+        </div>
+        	
+        <div class="line_big"></div>
+        
+        <button class="tijiaodingdan">提交订单</button>
+        
+    <!--</form>-->
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+/*****************************全局样式*************************************************/
+* {margin:0; padding:0;}
+html{font-size: 10px;}
+body {
+	font-family:"Microsoft yahei" !important; 
+	-webkit-overflow-scrolling:touch;/*流畅滚动*/
+}
+a{text-decoration:none;}
+ul{list-style:none;}
+a,button,input,optgroup,select,textarea {
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+a, img {
+    -webkit-touch-callout: none; /*禁止长按链接与图片弹出菜单*/
+}
+/*****************************页面样式*************************************************/
+.cg_pic{width:6.755556rem;height:6.755556rem;margin:2.88rem auto;}
+.cg_pic img{display:inline-block;height:auto;max-width:100%;}
+.cg_words{font-size:1.65rem;text-align:center;color:#333;}
+.shuoming{font-size:12rpx;text-align:center;color:#888;margin-top:1.066667rem;}
+.fanhui{width:24.46222rem;height:2.915556rem;border:1px solid #b2b2b2;border-radius:5px;margin:0 auto;margin-top:2.06222rem;font-size:1.65rem;line-height:2.915556rem;text-align:center;color:#333;}
+.chakan{width:24.46222rem;height:2.915556rem;border:1px solid #ec418a;border-radius:5px;margin:0 auto;margin-top:1.066667rem;font-size:1.65rem;line-height:2.915556rem;text-align:center;color:#fff;background-color:#ff72ae;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

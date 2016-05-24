@@ -1,0 +1,45 @@
+/*****************************全局样式*************************************************/
+* {margin:0; padding:0;}
+html{font-size: 10px;}
+body {
+	font-family:"Microsoft yahei" !important; 
+	-webkit-overflow-scrolling:touch;/*流畅滚动*/
+	background-color:#edf0f7;
+}
+a{text-decoration:none;}
+ul{list-style:none;}
+a,button,input,optgroup,select,textarea {
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+a, img {
+    -webkit-touch-callout: none; /*禁止长按链接与图片弹出菜单*/
+}
+/*****************************页面样式*************************************************/
+.header_box{height:3.65rem;width:100%;border-bottom:1px solid #dfdfdf;background-color:#edf0f7;padding-top:1.066667rem;}
+.header{width:92%;height:3.057778rem;margin:0 auto;font-size:12px;line-height:150%;color:#888;}
+
+.line1_box{height:3.022222rem;width:100%;border-bottom:1px solid #dfdfdf;background-color:#fff;}
+.line1{width:92%;height:3.022222rem;margin:0 auto;}
+.l1_l{width:6rem;height:3.022222rem;line-height:3.022222rem;font-size:1.65rem;color:#333;float:left;}
+.l1_r{width:16.7rem;height:3.022222rem;border:none;float:right;line-height:3.022222rem;outline:medium;}
+.l1_l2{width:10rem;height:3.022222rem;border:none;float:left;line-height:3.022222rem;outline:medium;margin-left:1.9rem;}
+.l1_r1{width:6.04444rem;height:2.13333rem;border-radius:15px;background-color:#ff72ae;float:right;margin-top:0.426667rem;line-height:2.13333rem;text-align:center;color:#fff;}
+.l1_l1{width:7rem;height:3.022222rem;line-height:3.022222rem;font-size:1.65rem;color:#333;float:left;}
+
+.line3_box{height:3.022222rem;width:100%;border-bottom:1px solid #dfdfdf;background-color:#fff;}
+.line3{width:92%;height:3.022222rem;margin:0 auto;}
+.l3_l{width:7rem;height:3.022222rem;line-height:3.022222rem;font-size:1.65rem;color:#333;float:left;}
+.l3_l2{width:10rem;height:3.022222rem;border:none;float:left;line-height:3.022222rem;outline:medium;margin-left:0.9rem;}
+.l3_r1{width:0.64rem;height:1.06667rem;float:right;margin-top:0.853333rem;}
+.l3_r1 img{display:inline-block;height:auto;max-width:100%;}
+
+
+.line4_box{height:2.915556rem;width:100%;margin-top:3.55556rem;}
+.line4{width:92%;height:2.915556rem;margin:0 auto;background-color:#ff72ae;border:1px solid #ec418a;border-radius:10px;line-height:2.915556rem;font-size:14px;color:#fff;text-align:center;}
+
+
+
+
+
+
+
