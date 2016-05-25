@@ -443,6 +443,12 @@ body{word-wrap:break-word;}
 .mt24{
     margin-top: 24px;
 }
+.mt26{
+    margin-top: 26px;
+}
+.mt28{
+    margin-top: 28px;
+}
 .mr22{
     margin-right: 22px;
 }
@@ -503,3 +509,16 @@ body{word-wrap:break-word;}
 .mt58{
     margin-top: 58px;
 }
+/****************paysuc  end***********************/
+
+
+/****************yslist  begin***********************/
+.star-img-info .img-ctn{
+    position: absolute;
+    top: 55px;
+    left: 2px;
+}
+.star-img-info .img-ctn img{
+    border-radius: 71px;
+}
+/****************yslist  end***********************/
