@@ -180,6 +180,12 @@ body{word-wrap:break-word;}
 .border-bottom{
     border-bottom: 1px solid #dfdfdf;
 }
+.border-top{
+    border-top: 1px solid #dfdfdf;
+}
+.border-left{
+    border-left: 1px solid #dfdfdf;
+}
 /*************bindPhone end***************/
 
 
@@ -200,6 +206,7 @@ body{word-wrap:break-word;}
 }
 .service-info-detail{
     height: 300px;
+    background: #ffffff;
 }
 .mt30{
     margin-top:30px;
@@ -216,8 +223,12 @@ body{word-wrap:break-word;}
 .mt40{
     margin-top:40px;
 }
+
 .h54{
     height: 54px;
+}
+.h86{
+    height: 86px;
 }
 .ys-base-info-ctn{
     color: #888888;
@@ -226,4 +237,78 @@ body{word-wrap:break-word;}
 .red50{
     color: #ef4f4f;
     font-size:40px;
+}
+.common-btn{
+    width: 199px;
+    height: 86px;
+    line-height: 86px;
+    color: #333333;
+    font-size:30px;
+    text-align: center;
+    background: #ffffff;
+}
+.common-btn a{
+    color: #333333;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.zfwk-btn{
+    height: 86px;
+    line-height: 86px;
+    width: 349px;
+    font-size:30px;
+    text-align: center;
+}
+.zfwk-btn.red{
+    color: #ffffff;
+    background:#ff72ae;
+}
+.zfwk-btn.grid,.common-btn.grid{
+    color: #b2b2b2;
+    background:#ffffff;
+}
+.zfwk-btn.green{
+    color: #ffffff;
+    background:#23dab1;
+}
+.order-item{
+    height: 475px;
+    position: relative;
+    clear: both;
+    margin-top: 38px;
+}
+.order-item:first-of-type{
+    margin-top: 0px;
+}
+.red-btn,.orange-btn,.green-btn{
+    position: absolute;
+    top:108px;
+    right: 30px;
+    width: 132px;
+    height: 41px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 41px;
+    font-size: 24px;
+}
+.red-btn{
+    color: #ef4f4f;
+    border:solid 1px #ef4f4f;
+    background: #ffffff;
+ }
+.orange-btn{
+    color: #eea21b;
+    border:solid 1px #eea21b;
+    background: #ffffff;
+}
+.green-btn{
+    color: #23dab1;
+    border:solid 1px #23dab1;
+    background: #ffffff;
+}
+
+.mt0{
+    margin-top: 0;
 }
