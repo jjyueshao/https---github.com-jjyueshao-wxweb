@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>年轻人的玩法量贩</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="/wandan/css/sprite.css"/>
+    <link rel="stylesheet" type="text/css" href="/wandan/css/gb.css"/>
+    <link rel="stylesheet" type="text/css" href="/wandan/css/wd.css"/>
+    <!----瀑布流css---->
+    <link rel="stylesheet" type="text/css" href="/wandan/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="/wandan/css/component.css" />
+    <link rel="stylesheet" type="text/css" href="/wandan/css/popup.css" />
+    <script type="text/javascript">
+        if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                var phoneScale = parseInt(window.screen.width)/640;
+                document.write('<meta name="viewport" content="width=640, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        }else{
+            document.write('<meta name="viewport" id="viewPortSetting" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+        //微信去掉下方刷新栏
+        if(navigator.userAgent.indexOf('MicroMessenger') >= 0){
+            document.addEventListener('WeixinJSBridgeReady', function() {
+                WeixinJSBridge.call('hideToolbar');
+            });
+        }
+    </script>
+
+</head>
+<body class="bge9">
+<!----关注公众号顶部 公用部分begin-->
+<div class="cnt followbar-ctn">
+    <div class="followbar-bg" onclick="helper.jump_index();"></div>
+    <div class="follow-btn gz_btn" id="code_gzH">关注公众号</div>
+</div>
+<!----关注公众号顶部 公用部分 end-->
+<!-----barnner begin-------------------->
+<div class="cnt barnner-ctn">
+    <div class="barnner-bg">
+        <img src="/wandan/img/barnner.png" alt=""/>
+    </div>
+    <!-----搜索 begin-------------------->
+    <div class="cnt searchbar-ctn js-search-ctn">
+        <div class="fl"><input class="js-search-input" id="keyword" type="text" placeholder="请输入昵称、学校或关键字..."/><div class="js-search-icon sprite sprite-search-icon left-ab"></div></div>
+        <div class="fr search-btn" onclick="goSearch()">搜索</div>
+    </div>
+    <!-----搜索 end-------------------->
+</div>
+<!-----barnner end-------------------->
+
+<div class="cnt list-nav-ctn js-list-nav-ctn">
+    <div class="nav-ctn">
+        <div class="left-nav fl">
+            <div class="fl js-item-text item-text"><a href="/wandan/html/newIndex.html">新番</a><div class="redbottom"></div></div>
+            <div class="fl js-item-text item-text focus">人气<div class="redbottom"></div></div>
+            <div class="fl js-item-text item-text"><a href="/wandan/html/school.html">学校</a><div class="redbottom"></div></div>
+        </div>
+        <!--<div class="right-nav fr">-->
+            <!--<div class="fl sprite sprite-sort mt12 mlm"></div>-->
+            <!--<div class="fr fs22 relative"><a href="/wandan/html/hua-list.html">排行榜</a><div class="sprite sprite-bangdanhot-icon bd-pos">&lt;!&ndash;-class添加hide&ndash;&gt;</div></div>-->
+        <!--</div>-->
+        <div class="right-nav fr mrl" style="width:135px;">
+            <a href="/wandan/html/hua-list.html"><div class="indexranksort-icon mlm"></div></a>
+        </div>
+    </div>
+    <div class="cb"></div>
+</div>
+
+<div class="cnt js-marque-ctn bg-white h70 border-bottom">
+    <div class="marque-msg-ctn info-ctn">
+        <div class="fl sprite sprite-tips-icon mt20 mrm"></div>
+        <div class="fl js-marque-info marque-info">
+            <!--<span class="c-orange">会玩,不孤单</span>-->
+            <!--<span class="c-orange">年轻人的玩法量贩</span>-->
+        </div>
+    </div>
+</div>
+<div class="list-ctn cnt bge9" style="height: auto">
+    <div class="info-ctn"  style="height: auto">
+        <ul class="grid effect-3" id="grid">
+        </ul>
+        <div class="cb"></div>
+    </div>
+</div>
+<div class="cb" id="loadMore" style="display:none;width: 60px;height: 60px;margin:0 auto;" ><img src="/wandan/img/loading.png" alt="" width="60"/></div>
+
+<!----大爷的  上面还有174-- margin padding 同时使用 避免不同机型对margin padding的支持不一致-->
+<div class="mt100 pt100"></div>
+
+<div class="bottom-btn-ctn">
+    <div class="relative" style="width: 640px;height: 100px;">
+        <div class="bg-op09 h100vc">
+            <div class="fl js-bottom-btn bottom-btn1 focus">
+                <div class="sprite sprite-bottom-draw"></div>
+            </div>
+            <div class="fl js-bottom-btn bottom-btn2">
+                <div class="sprite sprite-bottom-market"></div>
+
+            </div>
+            <div class="fl js-bottom-btn bottom-btn3" style="visibility: hidden;">
+                <div class="sprite sprite-bottom-qiuhua-icon"></div>
+            </div>
+            <div class="fl js-bottom-btn bottom-btn4">
+                <div class="sprite sprite-bottom-msg"></div>
+                <i class="bottom-msg-icon" style="display:none;">
+                	<span class="bottom-msg-notify-num">0</span>
+                </i>
+            </div>
+            <div class="fl js-bottom-btn bottom-btn5">
+                <div class="sprite sprite-bottom-usercenter"></div>
+            </div>
+        </div>
+        <div style="position: absolute;left:243px;top:20px;width: 138px;"><a href="/wandan/html/qiuhua.html"><div class="sprite sprite-bottom-qiuhua-icon"></div></a></div>
+    </div>
+</div>
+
+<!----浮世绘活动说明 begin---->
+<div class="js-hjgz hjgz-pop-ctn js-hjgz-aboat hide" style="z-index: 100">
+    <div class="gz-header">
+        浮世绘活动说明
+        <div class="gz-popup-close"></div>
+    </div>
+    <div id="rank-rule-content">
+        <img src="/wandan/img/fuhhihuihd.png" alt=""/>
+
+    </div>
+</div>
+<div class="popup-cover js-hjgz-aboat hide"></div>
+<!----浮世绘活动说明 end---->
+
+<script src="/wandan/js/lib/jquery-2.1.1.min.js"></script>
+<script src="/wandan/js/utils/utils.js"></script>
+<script src="/wandan/js/lib/fastclick.js"></script>
+<script src="/wandan/js/lib/modernizr.custom.js"></script>
+<script src="/wandan/js/lib/masonry.pkgd.min.js"></script>
+<script src="/wandan/js/lib/imagesloaded.js"></script>
+<script src="/wandan/js/lib/classie.js"></script>
+<script src="/wandan/js/lib/AnimOnScroll.js"></script>
+
+<script src="/wandan/js/paint/hotIndex.js"></script>
+<script src="/wandan/js/utils/jweixin-1.0.0.js"></script>
+<script src="/wandan/js/utils/wxconfig.js"></script>
+<script src="/wandan/js/utils/wd.tip.js"></script>
+<script src="/wandan/js/utils/config.js"></script>
+<script src="/wandan/js/utils/jquery.lazyload.min.js" type="text/javascript" charset="UTF-8"></script>
+<script src="/wandan/js/utils/underscore-min.js" type="text/javascript"  charset="UTF-8"></script>
+<script src="/wandan/js/utils/jquery.infinitescroll.js" type="text/javascript" charset="UTF-8"></script>
+<script src="/wandan/js/utils/TouchSlide.1.1.js" type="text/javascript" charset="UTF-8"></script>
+<script src="/wandan/js/paint/fixtopandmarque.js" type="text/javascript" charset="UTF-8"></script>
+
+<script>
+    //浮世绘logo(涂鸦的手绘墙样式）
+    setWxShareConfig("","","","浮世绘logo(涂鸦的手绘墙样式）","f9");
+    $(function(){
+        $(".js-search-input").on("focus",function(){
+            //$(".js-search-icon").addClass("hide");
+            // $(this).addClass("focus");
+        }).on("blur",function(){
+            if(helper.isEmpty($(this).val())){
+                $(".js-search-icon").removeClass("hide");
+                $(this).removeClass("focus");
+            }
+        });
+
+        $(".js-bottom-btn").bind("click",function(){
+            $(".js-bottom-btn").removeClass("focus");
+            $(this).addClass("focus");
+        });
+
+        $(".js-item-text").bind("click",function(){
+            $(".js-item-text").removeClass("focus");
+            $(this).addClass("focus");
+
+            var href = $(this).find("a").attr("href");
+            if(helper.isEmpty(href)){
+                return;
+            }
+            window.location.href=href;
+        });
+
+
+
+        window.onscroll = function (){
+            if(_reachBottom()){
+//                $("#loadMore").css("display","none");
+                hot_Index.initData();
+            }
+
+            //判断页面的某个dom的top在页顶时
+            var listnavtop = 384;//$(".js-list-nav-ctn").offset().top
+            var scrollTop = document.body.scrollTop;
+            if(scrollTop>listnavtop){//固定
+                $(".js-list-nav-ctn").addClass("list-fixed-top");
+                $(".js-marque-ctn").addClass("marque-fixed-top");
+            }else{
+                $(".js-list-nav-ctn").removeClass("list-fixed-top");
+                $(".js-marque-ctn").removeClass("marque-fixed-top");
+            }
+        };
+        $("#rank-rule-content").css("height",(document.documentElement.clientHeight -280)+"px").css("overflow-y","scroll");
+
+        FastClick.attach(document.body);
+		
+        //长连接数据
+        helper.longConnectData();
+    });
+
+    Array.prototype.insert = function (index, item) {
+        this.splice(index, 0, item);
+    };
+
+
+</script>
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?f0f4bc80696922a24b7249e434070131";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script type="text/template" id="item-template">
+    <li class="paint-item shown" id="item-{{data.id }}" onclick="gotoPaint({{data.id}})">
+        <div class="relative mb_pic_sty" style="width:286px;height:{{286*data.img_height/data.img_width}}px;">
+            {[ if(data.paint_num==0){ ]}
+                <img class="lazy" data-original="{{data.img }}" src="/addons/theme/stv1/_static/image/default_lazy.png" data-width="{{data.img_width }}" data-height="{{data.img_height }}" style="width:286px;height:{{286*data.img_height/data.img_width}}px" />
+            {[ }else{ ]}
+                <img class="lazy" data-original="{{data.produce.img }}" src="/addons/theme/stv1/_static/image/default_lazy.png" data-width="{{data.produce.img_width }}" data-height="{{data.produce.img_height }}" style="width:286px;height:{{286*data.produce.img_height/data.produce.img_width}}px" />
+                <div class="right-bottom-bar" style="height: auto;width: auto;">
+                    <img src="{{data.img }}" data-width="{{data.img_width }}" data-height="{{data.img_height }}" style="height:{{data.proH}}px;width:{{data.proW}}p"/>
+                </div>
+            {[ } ]}
+
+
+            <div class="right-top-bar  m-auto">
+                <!--<div class="sprite sprite-xuanshang-icon m-auto mt5"></div>-->
+                {[ if(data.gratuity > 0) { ]}
+                    <div class="xuangshang48-icon m-auto mt5"></div>
+                    <!--<div class="tac">悬赏</div>-->
+                {[ } ]}
+            </div>
+            <div class="bottom-info-bar bg-op06 white h45 z1 fs20">
+                {[ if(data.paint_num==0){ ]}
+                    <div class="fl">还没有被画过</div>
+                {[ }else{ ]}
+                    <div class="fl">被画{{data.paint_num}}次</div>
+                {[ } ]}
+                {[ if(data.is_expires==0){ ]}
+                    <div class="fr">画TA</div>
+                <!--onclick="gotoPaintDetail( {{data.id}})"-->
+                {[ } ]}
+                <div class="fr v-line"></div>
+
+            </div>
+        </div>
+        <div class="ptm bg-white mb_con_sty">
+            <div class="h68">
+                <div class="fl mlm"><img style="width:4rem;border-radius: 2rem" src="{{data.head_img_url }}" alt=""/></div>
+                <div class="fl mlm">
+                    <div>
+                        <div class="fl mts fs24 name-text-over">{{data.uname }}</div>
+                        {[ if(data.sex==1){ ]}
+                        <div class="fl sprite sprite-men-icon mt12 mls"></div>
+                        {[ }else{ ]}
+                        <div class="fl sprite sprite-women-icon mt12 mls"></div>
+                        {[ } ]}
+                    </div>
+                    <div class="cb mtm fs20 c96 name-text-over">{{data.xname }}</div>
+                </div>
+            </div>
+            <div class="cb mlm mrm mtm pbm fs22 c96">{{data.comment }}</div>
+        </div>
+    </li>
+</script>
+
+<script type="text/template" id="lamp-item">
+    <marquee direction="left" scrollamount="10"    loop="1">
+        <a href="{{data.url }}"></a>
+        <span class="c-link">{{data.uname }}</span>
+        <span class="c-1">打赏了</span>
+        <span class="c-link">{{data.r_uname }}</span>
+        <span class="c-orange">{{data.total_price}}</span>
+         <span class="c-1">个大洋
+            {[ if(data.desc){ ]}
+             ,说:
+            {[ } ]}
+        </span>
+        {[ if(data.desc){ ]}
+        <span class="c-orange">{{data.desc}}</span>
+        {[ } ]}
+    </marquee>
+</script>
+
+<!-- 公众号弹窗 -->
+<script type="text/template" id="dskb-dhz">
+    <div class="dskb-dhz-wrap">
+        <div class="dhz-2code-wrap">
+            <img src="/wandan/img/pop/test-2code.png" alt="">
+        </div>
+    </div>
+</script>
+<!-- 温馨提示弹窗 -->
+
+</body>
+</html>
