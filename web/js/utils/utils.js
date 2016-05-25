@@ -1249,59 +1249,27 @@ function getRandomArrItem(arr){
     return arr[Math.round(Math.random()*arr.length)];
 }
 
-
-
-/************分享蛋痛begin*************/
-/***
- *静态的数据可以直接填充到数组内，动态的需要特殊法的 直接在参数里传
- * @param shareURL
- * @param imgUrl
- * @param title
- * @param from   8:浮世绘作品玩单详情页  9:浮世绘（最新） 10:浮世绘（热门）11:浮世绘（学校） 16:作品上传页(未搞)
- */
-function setWxShareConfig(title,desc,shareURL,imgUrl,from){
-    var titleArrObj = {
-        "f8":["默认：（用户昵称）会玩·浮世绘头像（用户可修改，修改后拉取他的详情标题）"],//需要自传title URL
-        "f9":["浮世绘| 春风十里，不如画你"],
-        "f10":["浮世绘| 春风十里，不如画你"],
-        "f11":["哪个学校最会玩","灵魂画手都在这些学校","这学校简直666"],
-        "f16":["画画至死，恶搞至上",
-                "曾经有一张真挚的照片等你来画…",
-                "画画有打赏，恶搞也赚钱",
-                "如果你会画画那就来",
-                "想象力才是第一生产力",
-                "听说你很会画画",
-                "阅妞无数，不如画画很酷",
-                "春风十里，不如画你"]
-
+// 对Date的扩展，将 Date 转化为指定格式的String
+// 月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符，
+// 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
+// 例子：
+// (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
+// (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18
+Date.prototype.Format = function (fmt) { //author: meizz
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
     };
-    var descArrObj = {
-        "f8":["我画画，就是为了安慰你无处安放的沮丧","我的画是你的心灵A片","画出你面具下的思想","春风十里，不如画你","我的创意收集起来可以发电" ],
-        "f9":["画画至死，恶搞至上","美女帅哥都等着你帮TA画画呢","会画画撩妹技能max","画画有打赏，恶搞也赚钱",
-            "做人没有梦想，那和咸鱼有什么区别","如果你会画画那就来","召集最会画画的人","玩单浮世绘，千军万马来相会","做一个好基友，当一个好画手",
-            "想象力才是第一生产力","听说你很会画画","阅妞无数，不如画画很酷","只要有画笔，哪里都是马尔代夫"],
-        "f10":["浮世绘| 春风十里，不如画你"],
-        "f11":[
-            "画画至死，恶搞至上",    "美女帅哥都等着你帮TA画画呢",    "会画画撩妹技能max",    "画画有打赏，恶搞也赚钱", "做人没有梦想，那和咸鱼有什么区别", "如果你会画画那就来", "召集最会画画的人", "玩单浮世绘，千军万马来相会", "做一个好基友，当一个好画手", "想象力才是第一生产力",
-            "听说你很会画画",
-            "阅妞无数，不如画画很酷",
-            "只要有画笔，哪里都是马尔代夫"
-        ],
-        "f16":[//需传desc
-            "（拉取用户求画时填的说明）"
-        ]
-    };
-
-    //组装数据
-    var wxParams = {};
-    wxParams.link = shareURL||window.location.href;
-    wxParams.imgUrl = imgUrl||"http://wdts.318318.cn/wandan/img/logo.png";
-    wxParams.title = title||getRandomArrItem(titleArrObj[from]);
-    wxParams.desc = desc||getRandomArrItem(descArrObj[from]);
-
-    var shareData = {};
-    //shareData.module = "paintDetail";
-    doShare(wxParams, shareData);
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
 }
 
-/************分享蛋痛end*************/
+//var time1 = new Date().Format("yyyy-MM-dd");
+//var time2 = new Date().Format("yyyy-MM-dd HH:mm:ss");
