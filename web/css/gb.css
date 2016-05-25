@@ -95,3 +95,8 @@ body{word-wrap:break-word;}
 .f18{ font-size:18px; }
 .f16{ font-size:16px; }
 .f14{ font-size:14px; }
+
+
+#loadingToast,#toast{
+    display: none;
+}
