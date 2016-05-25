@@ -183,6 +183,20 @@ var helper = {
             return false;
         }
     },
+    isHttps:function(){
+        var url = window.location.href;
+        var isHttps = url.toUpperCase().indexOf("HTTPS");
+        if(isHttps>-1){
+            return true;
+        }
+        return false;
+    },
+    getProtocol:function(){
+        if(helper.isHttps()){
+            return "https"
+        }
+        return "http";
+    },
     preventBackgroundScroll:function(){
         $("body,html").css({"overflow":"hidden"});
     },
