@@ -20,6 +20,9 @@ body{word-wrap:break-word;}
 .txt-sectitle{font-size:14px;color:#444444;font-weight:bold;}
 .txt-highlight{color:#f8b551;font-weight:bold;}
 .link-highlight{color:#3697c2;}
+.inline-block{
+    display: inline-block;
+}
 .pas{padding:5px}
 .pam{padding:10px}
 .pal{padding:20px}
@@ -129,6 +132,9 @@ body{word-wrap:break-word;}
     width: 690px;
     margin:0 auto;
 }
+.w510{
+    width: 510px;
+}
 .form-title{
     width: 208px;
 }
@@ -177,3 +183,47 @@ body{word-wrap:break-word;}
 /*************bindPhone end***************/
 
 
+/************myorderlist begin **********************/
+.statustype{
+    height: 86px;
+}
+.statustype h2{
+    padding-top: 38px;
+    height: 28px;
+}
+.service-info-base{
+    height: 88px;
+    line-height: 88px;
+    font-size:34px;
+    color: #333333;
+    background: #ffffff;
+}
+.service-info-detail{
+    height: 300px;
+}
+.mt30{
+    margin-top:30px;
+}
+.ml30{
+    margin-left: 30px;
+}
+.mt15{
+    margin-top:15px;
+}
+.mt70{
+    margin-top:70px;
+}
+.mt40{
+    margin-top:40px;
+}
+.h54{
+    height: 54px;
+}
+.ys-base-info-ctn{
+    color: #888888;
+    font-size:28px;
+}
+.red50{
+    color: #ef4f4f;
+    font-size:40px;
+}
