@@ -99,6 +99,7 @@ body{word-wrap:break-word;}
 .f16{ font-size:16px; }
 .f14{ font-size:14px; }
 .f34{ font-size:34px;}
+.f40{font-size:40px;}
 .c8{
     color: #888888;
 }
@@ -207,6 +208,7 @@ body{word-wrap:break-word;}
 .service-info-detail{
     height: 300px;
     background: #ffffff;
+    position: relative;
 }
 .mt30{
     margin-top:30px;
@@ -233,6 +235,9 @@ body{word-wrap:break-word;}
 .ys-base-info-ctn{
     color: #888888;
     font-size:28px;
+}
+.cef{
+    color: #ef4f4f;
 }
 .red50{
     color: #ef4f4f;
@@ -284,7 +289,7 @@ body{word-wrap:break-word;}
 }
 .red-btn,.orange-btn,.green-btn{
     position: absolute;
-    top:108px;
+    top:20px;
     right: 30px;
     width: 132px;
     height: 41px;
@@ -312,3 +317,40 @@ body{word-wrap:break-word;}
 .mt0{
     margin-top: 0;
 }
+/************************/
+
+
+/****************orderdetail begin************************/
+.detail-ctn .t{
+    color: #333333;
+    font-size:34px;
+}
+
+.detail-ctn .i{
+    color: #888888;
+    font-size:32px;
+}
+.detail-ctn .s{
+    margin-right: 55px;
+}
+.fixed-bottom{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin:auto;left:0; right:0;width:750px;
+}
+.status-text{
+    font-size:30px;
+    color: #333333;
+}
+.status-info{
+    font-size: 26px;
+    color: #b2b2b2;
+}
+.pl64{
+    padding-left: 64px;
+}
+.node-status{
+    margin-top:78px;
+}
+/****************orderdetail end************************/
