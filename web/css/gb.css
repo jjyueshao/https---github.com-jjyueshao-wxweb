@@ -350,7 +350,67 @@ body{word-wrap:break-word;}
 .pl64{
     padding-left: 64px;
 }
+.pb40{
+    padding-bottom: 40px;
+}
 .node-status{
     margin-top:78px;
+}
+.pt27{
+    padding-top: 27px;
+}
+
+.line-status{
+    height: 800px;
+    width: 1px;
+    background: #dfdfdf;
+    position: absolute;
+    top:55px;
+    left:30px;
+}
+.line-status-node0{
+    position: absolute;
+    top:43px;
+    left:23px;
+}
+.line-status-node1{
+    position: absolute;
+    top:210px;
+    left:23px;
+}
+
+.line-status-node2{
+    position: absolute;
+    top:375px;
+    left:23px;
+}
+
+.line-status-node3{
+    position: absolute;
+    top:545px;
+    left:23px;
+}
+
+.line-status-node4{
+    position: absolute;
+    top:715px;
+    left:23px;
+}
+
+.line-status-node5{
+    position: absolute;
+    top:845px;
+    left:23px;
+}
+
+.jjys-orderstatusoff.on {
+    width: 15px;
+    height: 15px;
+    background-position: -485px -306px;
+}
+
+.status-text.grid{
+    color: #b2b2b2;
+    background:#ffffff;
 }
 /****************orderdetail end************************/
