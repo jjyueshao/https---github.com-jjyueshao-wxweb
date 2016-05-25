@@ -195,7 +195,7 @@ body{word-wrap:break-word;}
     height: 86px;
 }
 .statustype h2{
-    padding-top: 38px;
+    padding-top: 30px;
     height: 28px;
 }
 .service-info-base{
@@ -333,6 +333,7 @@ body{word-wrap:break-word;}
 .detail-ctn .s{
     margin-right: 55px;
 }
+
 .fixed-bottom{
     position: fixed;
     bottom: 0;
@@ -413,4 +414,63 @@ body{word-wrap:break-word;}
     color: #b2b2b2;
     background:#ffffff;
 }
+.pm86{
+    margin-top:86px;padding-top: 86px;
+}
 /****************orderdetail end************************/
+
+
+
+
+
+/****************confirmpay begin************************/
+.confirmpay .t{
+    color: #333333;
+    font-size:34px;
+}
+
+.confirmpay .i{
+    color: #888888;
+    font-size:34px;
+}
+.confirmpay .s{
+    margin-right: 55px;
+}
+
+.confirmpay .cef{
+    color: #ef4f4f;
+}
+.mt24{
+    margin-top: 24px;
+}
+.mr22{
+    margin-right: 22px;
+}
+.pbt30{
+    padding-top:30px;
+    padding-bottom: 30px;
+}
+.h100{
+    height: 100px;
+    line-height: 100px;
+}
+.confirmpay-btn{
+    background: #ff72ae;
+    text-align: center;
+    color: #ffffff;
+    font-size: 40px;
+}
+.pm100{
+    margin-top:100px;padding-top: 100px;
+}
+.zftips{
+    font-size:28px;height: 28px;line-height: 28px;
+    margin-top:20px;
+}
+.zftitle{
+    font-size:34px;height: 34px;line-height: 34px;
+}
+.ml26{
+    margin-left: 26px;
+}
+/****************confirmpay end************************/
