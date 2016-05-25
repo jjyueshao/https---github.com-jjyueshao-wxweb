@@ -111,6 +111,9 @@ body{word-wrap:break-word;}
 .backgri{
     background: #edf0f7;
 }
+.backf8{
+    background: #f8f8f8;
+}
 .backwhite{
     background: #ffffff;
 }
@@ -171,3 +174,6 @@ body{word-wrap:break-word;}
 .border-bottom{
     border-bottom: 1px solid #dfdfdf;
 }
+/*************bindPhone end***************/
+
+

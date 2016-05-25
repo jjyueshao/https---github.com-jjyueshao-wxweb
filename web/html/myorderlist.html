@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="../css/gb.css"/>
     <link rel="stylesheet" href="../css/weui.css"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-
     <script type="text/javascript">
         if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
             var version = parseFloat(RegExp.$1);
@@ -37,42 +36,12 @@
     </script>
     <script type='text/javascript' src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js'></script>
 </head>
-<body class="backgri">
-<div class="bindpage w750">
-    <div class="header w690 c8 tal">
-        <div class="pt28 f28">绑定手机后,您在家家月嫂微信端的数据就可以在APP、网站上互通</div>
-    </div>
-</div>
-<div class="w750 backwhite f34  border-bottom">
-    <div class="w690 h88 c3 ">
-        <div class="fl form-title">手机号码</div>
-        <div class="fl form-input"><input type="text" placeholder="请填写您的手机号码"/></div>
-        <div class="fr"></div>
-    </div>
-</div>
-<div class="w750 backwhite f34 border-bottom">
-    <div class="w690  h88 c3 cb ">
-        <div class="fl form-title">验证码</div>
-        <div class="fl form-input"><input type="text" placeholder="请填写验证码"/></div>
-        <div class="fr"><div class="get-code-btn">获取验证码</div></div>
-    </div>
-</div>
+<body class="backf8">
+<div class="orderlist-ctn">
+    <div class="order-item">
 
-<div class="w750 backwhite f34 border-bottom">
-    <div class="w690 h88 c3 cb ">
-        <div class="fl form-title">宝妈预产期</div>
-        <div class="fl cb2 form-input">
-            <!--<input id="js-date" type="datetime-local" placeholder="请选择宝妈产期"/>-->
-            <input id="js-date" type="input" placeholder="请选择宝妈产期"/>
-        </div>
-        <div class="fr"></div>
     </div>
 </div>
-
-<div class="w690">
-    <div class="submit-btn">提交</div>
-</div>
-
 <div id="toast">
     <div class="weui_mask_transparent"></div>
     <div class="weui_toast">
@@ -149,7 +118,8 @@
     var _hmt = _hmt || [];
     template.openTag = '{%';
     template.closeTag = '%}';
-    helper.setTitle("绑定手机");
+    helper.setTitle("我的订单");
 </script>
+
 </body>
 </html>
