@@ -136,6 +136,9 @@ body{word-wrap:break-word;}
 .w510{
     width: 510px;
 }
+.w400{
+    width: 394px;
+}
 .form-title{
     width: 208px;
 }
@@ -161,6 +164,7 @@ body{word-wrap:break-word;}
 .h88{
     height: 88px;line-height: 88px;
 }
+
 .submit-btn{
     background: #ff72ae;color: #ffe1ec;font-size:34px;
     border-radius: 10px;
@@ -221,6 +225,18 @@ body{word-wrap:break-word;}
 }
 .mt70{
     margin-top:70px;
+}
+.mt120{
+    margin-top: 120px;
+}
+.mt44{
+    margin-top: 44px;
+}
+.mt55{
+    margin-top: 55px;
+}
+.h350{
+    height: 350px;
 }
 .mt40{
     margin-top:40px;
@@ -522,3 +538,32 @@ body{word-wrap:break-word;}
     border-radius: 71px;
 }
 /****************yslist  end***********************/
+.backff72ae{
+    background: #ff72ae;
+}
+.cwhite{
+    color: #ffffff;
+}
+
+.usercenter-img-info{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.usercenter-img-info img{
+    border-radius: 100px;
+}
+
+.usercenter-number{
+    background:#ef4f4f ;
+    color: #ffffff;
+    font-size: 20px;
+    width: 24px;
+    height:24px;
+    border-radius: 12px;
+    position: absolute;
+    top:10px;
+    left:230px;
+    line-height: 24px;
+    text-align: center;
+}
