@@ -537,6 +537,64 @@ body{word-wrap:break-word;}
 .star-img-info .img-ctn img{
     border-radius: 71px;
 }
+.nav-ctn{
+    background-image: url(../img/yslist-nav-bg.png);
+    background-repeat: no-repeat;
+    width: 750px;
+    height: 94px;
+    display: block;
+   color: #cccccc;
+    background-color:#fcfbf9;
+    display:-moz-box;
+     /* Firefox */display:-webkit-box;
+     /* Safari and Chrome */
+    display:box;
+    height:90px;
+    font-size:20px;
+    color: #756e64;
+}
+
+
+.menu-item {
+    text-align: center;
+    color: #666666;
+    position: relative;
+    height: 80px;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+}
+.menu-item .nav-text{
+    color: #323232;
+    font-size: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 25px;
+}
+
+.line-focus{
+    height: 0px;
+}
+.sort-down,.sort-up{
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 19px;
+    height: 10px;
+    top:34px;
+    right: 22px;
+}
+.sort-down{
+    background-image: url(../img/sort-down.png);
+}
+.sort-up{
+    background-image: url(../img/sort-up.png);
+}
+.focus .line-focus{
+    background: #ff72ae;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -6px;
+}
 /****************yslist  end***********************/
 .backff72ae{
     background: #ff72ae;
@@ -567,3 +625,6 @@ body{word-wrap:break-word;}
     line-height: 24px;
     text-align: center;
 }
+
+
+
