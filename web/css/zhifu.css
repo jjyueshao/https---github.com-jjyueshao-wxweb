@@ -1,0 +1,120 @@
+/*****************************全局样式*************************************************/
+* {margin:0; padding:0;}
+html{font-size: 10px;}
+body {
+	font-family:"Microsoft yahei" !important; 
+	-webkit-overflow-scrolling:touch;/*流畅滚动*/
+}
+a{text-decoration:none;}
+ul{list-style:none;}
+a,button,input,optgroup,select,textarea {
+    -webkit-tap-highlight-color:rgba(0,0,0,0); /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+}
+a, img {
+    -webkit-touch-callout: none; /*禁止长按链接与图片弹出菜单*/
+}
+/*****************************页面样式*************************************************/
+.content1{width: 100%;height: 9rem;padding-top: 1.06667rem;}
+.yuesao_photo{width: 18.9333%;height:7.928889rem;margin-left: 1.06667rem; float: left;background-image:url(../images/zhifu/yuesao_six.png);background-size:100% 100%;}
+
+.yuesao_jianjie{float: left;padding-left: 1.06667rem;padding-top: 2.38rem;}
+.yuesao{font-size: 1.5rem;color:#333;margin-bottom: 1.42222rem;}
+.yuesao_name{float:left;}
+.yuesao_rz{float:left;width:34.6666%;height:2.12223rem;margin-left:2.6667%;}
+.yuesao_rz img{display:inline-block;height:auto;max-width:100%;}
+
+.line_style{width:100%;height:2.986667rem;background-color:#edf0f7;border-top:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;}
+.line_style1{width:100%;height:2.986667rem;background-color:#edf0f7;border-bottom:1px solid #dfdfdf;}
+.ls_text{font-size:1.5rem;color:#888;line-height:2.986667rem;margin-left:4%;}
+
+.demo{width:100%;height:3.057778rem;border-bottom:1px solid #dfdfdf;font-size:1.65rem;line-height:3.057778rem;}
+.xzk{width:0.64rem;height:1.06667rem;float:right;margin-right:1.06667rem;}
+.xzk img{display:inline-block;height:auto;max-width:100%;}
+
+.baobei_sl{width:100%;height:7.11111rem;border-bottom:1px solid #dfdfdf;}
+.bb_title{margin-top:0.7111rem;margin-left:1.06667rem;font-size:1.65rem;color:#333;}
+.slxz{margin-top:1.2444rem;margin-left:1.06667rem;}
+.danbaotai{width:19.4666%;height:1.991111rem;line-height:1.991111rem;background-color:#ff72ae;border:1px solid #ff72ae;color:#fff;font-size:1rem;}
+.shuangbaotai{width:19.4666%;height:1.991111rem;line-height:1.991111rem;background-color:#fff;border:1px solid #ff72ae;color:#ff72ae;font-size:1rem;margin-left:6.6667%;}
+
+.fuwu_ts{width:100%;height:7.11111rem;border-bottom:1px solid #dfdfdf;}
+.fw_title{margin-top:0.7111rem;margin-left:1.06667rem;font-size:1.65rem;color:#333;}
+.tsxz{margin-top:1.2444rem;margin-left:1.06667rem;}
+.taocan1{width:19.4666%;height:1.991111rem;line-height:1.991111rem;background-color:#ff72ae;border:1px solid #ff72ae;color:#fff;font-size:1rem;}
+.taocan2{width:19.4666%;height:1.991111rem;line-height:1.991111rem;background-color:#fff;border:1px solid #ff72ae;color:#ff72ae;font-size:1rem;margin-left:6.6667%;}
+
+.lianxiren{width:100%;height:3.057778rem;border-bottom:1px solid #dfdfdf;}
+.lxr_tt{display:inline-block;font-size:1.65rem;margin-left:1.06667rem;line-height:3.057778rem;}
+.lxr_xx{border:none;margin-left:16.6667%;font-size:1.65rem;}
+
+.lianxidianhua{width:100%;height:3.057778rem;border-bottom:1px solid #dfdfdf;}
+.lxdh_tt{display:inline-block;font-size:1.65rem;margin-left:1.06667rem;line-height:3.057778rem;}
+.lxdh_xx{border:none;margin-left:11.6667%;font-size:1.65rem;}
+
+.xuanzediqu{width:100%;height:3.057778rem;border-bottom:1px solid #dfdfdf;}
+.xzdq_tt{display:inline-block;font-size:1.65rem;margin-left:1.06667rem;line-height:3.057778rem;}
+.xzdq_xx{margin-left:11.6667%;font-size:1.65rem;}
+.xzk1{width:0.64rem;height:1.06667rem;float:right;margin-top:0.8rem;margin-right:1.06667rem;}
+.xzk1 img{display:inline-block;height:auto;max-width:100%;}
+
+.fw_zj{width:100%;height:3.057778rem;border-bottom:1px solid #dfdfdf;color:#333;}
+.fwzj_box{width:80%;height:3.057778rem;margin-left:4%;font-size:1.65rem;float:left;}
+.fwzj_left{float:left;line-height:3.057778rem;}
+.fwzj_right{float:right;line-height:3.057778rem;}
+.xzk2{width:0.64rem;height:1.06667rem;float:right;margin-top:0.8rem;margin-right:1.06667rem;}
+.xzk2 img{display:inline-block;height:auto;max-width:100%;}
+
+.daizhifu{width:100%;height:3.057778rem;border-bottom:1px solid #dfdfdf;color:#333;}
+.dzf_box{width:80%;height:3.057778rem;margin-left:4%;font-size:1.65rem;float:left;}
+.dzf_left{float:left;line-height:3.057778rem;}
+.dzf_right{float:right;line-height:3.057778rem;color:#ef4f4f;}
+
+.wenxintishi{width:100%;height:3.3778rem;}
+.wxts_box{width:93.333%;height:3.3778rem;margin-left:4%;font-size:1rem;color:#b2b2b2;margin-top:1.06667rem;line-height: 1.5rem;}
+
+.beizhu{width:100%;height:10.6667rem;border-bottom:1px solid #dfdfdf;}
+.bz_box{width:92%;height:9.06667rem;margin-left:4%;margin-top:1.2rem;color:#b2b2b2;font-size:1.5rem;position:relative;}
+.bz_box textarea{
+	width:100%;
+	height: 120px;
+	font-size: 16px;
+}
+.jishu{position:absolute;right:0;bottom:0;}
+
+.line_small{width:100%;height:1.35111rem;background-color:#edf0f7;border-bottom:1px solid #dfdfdf;}
+
+.tiaokuan{width:100%;height:3.09333rem;border-bottom:1px solid #dfdfdf;}
+.comList_checkbox{opacity:0;}
+/*label样式*/
+.comList_forCheckbox{
+	width:20px;
+	height:20px;
+	color:Red;
+	cursor:pointer;
+	text-align:center;
+	display:inline-block;
+	border:1px solid #cbcbcb;
+	border-radius:10px;
+	background-color:#fff;
+	line-height: 21px;
+}
+.tk_box{width:40px;height:40px;margin-left:4%;margin-top:2%;float:left;}
+.tongyi{height:3.09333rem;line-height:3.09333rem;font-size:1.5rem;color:#333;float:left;}
+.fuwuxieyi{height:3.09333rem;line-height:3.09333rem;font-size:1.5rem;color:#225fba;float:left;}
+
+.line_big{width:100%;height:3.02222rem;background-color:#edf0f7;border-bottom:1px solid #dfdfdf;}
+
+.tijiaodingdan{width:100%;height:3.626667rem;background-color:#ff72ae;line-height:3.626667rem;color:#fff;text-align:center;font-size:2rem;border:none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
