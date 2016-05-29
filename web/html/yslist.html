@@ -158,6 +158,62 @@
         </div>
     </div>
 
+<div class="weui_mask js-filter-mask"></div>
+<div class="fixed-bottom filter-choose-ctn backwhite js-filter-choose-ctn">
+    <div class="w690 h88">
+        <div class="fl f32 c8">取消</div>
+        <div class="fl f34 c3 ml216">筛选月嫂</div>
+        <div class="fr f32 cff72ae">确定</div>
+    </div>
+    <div class="sperate-grid w750"></div>
+    <div class="w750 backwhite border-bottom f32 c3">
+        <div class="w690 h86">
+            <div class="fl h86 lh86 t">预产期</div>
+            <div class="fl h86 lh86 i ml120">2016年5月20日</div>
+            <div class="fr jjys jjys-right-icon mt26"></div>
+        </div>
+    </div>
+    <div class="w750 backwhite border-bottom f32 c3 cb">
+        <div class="w690">
+            <div class="lh32 mt24">服务天数</div>
+            <div class="filter-item-ctn mt24 mb40">
+                <div class="fl filter-item-base">不限</div>
+                <div class="fl filter-item-base ml40">26天</div>
+                <div class="fl filter-item-base ml40">42天</div>
+                <div class="fl filter-item-base ml40">78天</div>
+            </div>
+        </div>
+    </div>
+    <div class="w750 backwhite border-bottom f32 c3 cb">
+        <div class="w690">
+            <div class="lh32 mt24">经验</div>
+            <div class="filter-item-ctn mt24 mb40">
+                <div class="fl filter-item-base">不限</div>
+                <div class="fl filter-item-base ml40">1~2年</div>
+                <div class="fl filter-item-base ml40">3~5年</div>
+                <div class="fl filter-item-base ml40">5年以上</div>
+            </div>
+        </div>
+    </div>
+    <div class="w750 backwhite border-bottom f32 c3 cb">
+        <div class="w690">
+            <div class="lh32 mt24">年龄</div>
+            <div class="filter-item-ctn mt24 mb40">
+                <div class="fl filter-item-base">不限</div>
+                <div class="fl filter-item-base ml40">30岁以下</div>
+                <div class="fl filter-item-base ml40">30~40岁</div>
+                <div class="fl filter-item-base ml40">40岁以上</div>
+            </div>
+        </div>
+    </div>
+    <div class="w750 backwhite f32 c3">
+        <div class="w690 h86">
+            <div class="fl h86 lh86 t">籍贯</div>
+            <div class="fl h86 lh86 i ml120">湖南省</div>
+            <div class="fr jjys jjys-right-icon mt26"></div>
+        </div>
+    </div>
+</div>
 <div id="toast">
     <div class="weui_mask_transparent"></div>
     <div class="weui_toast">
@@ -235,6 +291,12 @@
     template.openTag = '{%';
     template.closeTag = '%}';
     helper.setTitle("月嫂列表");
+    $(function(){
+        $(".js-filter-mask").bind("click",function(){
+            $(".js-filter-mask").css("display","none");
+            $(".js-filter-choose-ctn").css("display","none");
+        })
+    })
 </script>
 
 </body>
