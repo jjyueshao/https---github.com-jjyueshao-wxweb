@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="robots" content="none">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes"/>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../css/gb.css"/>
+    <link rel="stylesheet" href="../css/sprite.css"/>
+    <link rel="stylesheet" href="../css/weui.css"/>
+    <script type="text/javascript">
+        if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                var phoneScale = parseInt(window.screen.width)/750;
+                document.write('<meta name="viewport" content="width=750, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=750, target-densitydpi=device-dpi">');
+            }
+        }else{
+            document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+        //微信去掉下方刷新栏
+        if(navigator.userAgent.indexOf('MicroMessenger') >= 0){
+            document.addEventListener('WeixinJSBridgeReady', function() {
+                WeixinJSBridge.call('hideToolbar');
+            });
+        }
+    </script>
+    <script type='text/javascript' src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js'></script>
+</head>
+<body class="backf8">
+<div class="w750 aboutus-ctn">
+    <img src="../img/about001.png" alt=""/>
+    <img src="../img/about002.png" alt=""/>
+    <img src="../img/about003.png" alt=""/>
+    <img src="../img/about004.png" alt=""/>
+    <img src="../img/about005.png" alt=""/>
+    <img src="../img/about007.png" alt=""/>
+</div>
+<script src="../js/lib/jquery-2.1.1.min.js"></script>
+<script src="../js/lib/fastclick.js"></script>
+<script src="../js/utils/template.js"></script>
+<script src="../js/utils/utils.js"></script>
+<script type="text/javascript">
+    window.onerror=function(e){
+        //alert(JSON.stringify(e));
+        //alert(e);
+        //console.log(e);
+    }
+    var protocol = helper.getProtocol();
+    var host = window.location.host;
+    window.g_Domain = protocol+'://'+host+'/';
+    //window.g_base = 'http://'+host+'/H5/orderv14/';
+    window.IMGCACHE_DOMAIN = protocol+'://'+host;
+    var g_isPubGray = true;
+    //window.g_Domain = 'wx.aviclub.net';
+    //window.IMGCACHE_DOMAIN = 'wx.aviclub.net/images';
+    window.TQ = {
+        debug:function(){
+            return true;
+        },
+        _domains:{
+            main:host,
+            imgcache:host,
+            api:host
+        }
+    };
+    var g_host =protocol+"://"+"www.izhuazhua.com//H5/orderv14/";
+    window.wxData = {imgUrl: "http://s.izhuazhua.com/res/img/websass/sharelogo.png",
+        link: protocol+"://" + host + "/H5/orderv14/index.jsp",
+        title: "",
+        desc: ""}
+
+    /***
+     * var dInp = document.getElementById("js-date"),
+     date = dInp.valueAsDate; // 将value以日期对象形式返回
+     // 下面就是使用日期对象获取相应数据了
+     var Year = date.getFullYear(); // 完整年
+     var Month = date.getMonth() + 1; // 月
+     var Day = date.getDate(); // 日
+     */
+    //document.getElementById('js-date').valueAsDate = new Date();
+    //var time1 = new Date(document.getElementById('js-date').valueAsDate).Format("yyyy-MM-dd");
+</script>
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    template.openTag = '{%';
+    template.closeTag = '%}';
+    helper.setTitle("关于我们");
+</script>
+
+</body>
+</html>
