@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="robots" content="none">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes"/>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../css/gb.css"/>
+    <link rel="stylesheet" href="../css/sprite.css"/>
+    <link rel="stylesheet" href="../css/weui.css"/>
+    <script type="text/javascript">
+        if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                var phoneScale = parseInt(window.screen.width)/750;
+                document.write('<meta name="viewport" content="width=750, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=750, target-densitydpi=device-dpi">');
+            }
+        }else{
+            document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+        //微信去掉下方刷新栏
+        if(navigator.userAgent.indexOf('MicroMessenger') >= 0){
+            document.addEventListener('WeixinJSBridgeReady', function() {
+                WeixinJSBridge.call('hideToolbar');
+            });
+        }
+    </script>
+    <script type='text/javascript' src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js'></script>
+</head>
+<body class="backf8">
+    <div class="w750">
+        <div class="w750 border-bottom">
+            <div class="statustype backf8 w690">
+                <h2 class="c8 f28">费用合计</h2>
+            </div>
+        </div>
+        <div class="confirmpay">
+            <div class="w750 backwhite border-bottom">
+                <div class="w690 h88">
+                    <div class="fl h88 t">26天月子服务</div>
+                    <div class="fr h88 t">￥8700元</div>
+                </div>
+            </div>
+            <div class="w750 backwhite border-bottom">
+                <div class="w690 h88">
+                    <div class="fl h88 t">优惠券</div>
+                    <div class="fr h88 i">-￥500元</div>
+                </div>
+            </div>
+            <div class="w750 backwhite border-bottom">
+                <div class="w690 h88">
+                    <div class="fl h88 t">待支付</div>
+                    <div class="fr h88 i cef">￥8300元</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w750">
+        <div class="w750 border-bottom">
+            <div class="statustype backf8 w690">
+                <h2 class="c8 f28">支付金额</h2>
+            </div>
+        </div>
+        <div class="confirmpay backwhite">
+            <div class="w750 backwhite border-bottom">
+                <div class="w690 h88">
+                    <div class="fl jjys jjys-check mt24 mr22 jjys-check-focus"></div>
+                    <div class="fl h88 t">支付定金（20%）</div>
+                    <div class="fr h88 i">￥1660元</div>
+                </div>
+            </div>
+            <div class="w750 backwhite border-bottom cb">
+                <div class="w690 h88">
+                    <div class="fl jjys jjys-check mt24 mr22"></div>
+                    <div class="fl h88 t">支付全款</div>
+                    <div class="fr h88 i">￥8300元</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w750">
+        <div class="w750 border-bottom">
+            <div class="statustype backf8 w690">
+                <h2 class="c8 f28">支付方式</h2>
+            </div>
+        </div>
+        <div class="confirmpay backwhite">
+            <div class="w750 backwhite border-bottom">
+                <div class="w690 h88 pbt30">
+                    <div class="fl jjys jjys-check mt24 mr22 jjys-check-focus"></div>
+                    <div class="fl h88 jjys jjys-weixin"></div>
+                    <div class="fl i ml26">
+                        <div class="zftitle mts">微信支付</div>
+                        <div class="zftips">推荐安装微信5.0及以上版本的用户使用</div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="w750 cb backwhite border-bottom cb">-->
+                <!--<div class="w690 h88 pbt30">-->
+                    <!--<div class="fl jjys jjys-check mt24 mr22"></div>-->
+                    <!--<div class="fl h88 jjys jjys-zfb"></div>-->
+                    <!--<div class="fl i ml26">-->
+                        <!--<div class="zftitle mts">支付宝支付</div>-->
+                        <!--<div class="zftips">推荐安装支付宝客户端的用户使用</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="pm100"></div>
+    <div class="w750 cb  h100 fixed-bottom">
+        <div class="h100 confirmpay-btn ">确认支付</div>
+    </div>
+<div id="toast">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <i class="weui_icon_toast"></i>
+        <p class="weui_toast_content">已完成</p>
+    </div>
+</div>
+<div id="loadingToast" class="weui_loading_toast">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">数据加载中</p>
+    </div>
+</div>
+<script src="../js/lib/jquery-2.1.1.min.js"></script>
+<script src="../js/lib/fastclick.js"></script>
+<script src="../js/utils/template.js"></script>
+<script src="../js/utils/utils.js"></script>
+<script type="text/javascript">
+    window.onerror=function(e){
+        //alert(JSON.stringify(e));
+        //alert(e);
+        //console.log(e);
+    }
+    var protocol = helper.getProtocol();
+    var host = window.location.host;
+    window.g_Domain = protocol+'://'+host+'/';
+    //window.g_base = 'http://'+host+'/H5/orderv14/';
+    window.IMGCACHE_DOMAIN = protocol+'://'+host;
+    var g_isPubGray = true;
+    //window.g_Domain = 'wx.aviclub.net';
+    //window.IMGCACHE_DOMAIN = 'wx.aviclub.net/images';
+    window.TQ = {
+        debug:function(){
+            return true;
+        },
+        _domains:{
+            main:host,
+            imgcache:host,
+            api:host
+        }
+    };
+    var g_host =protocol+"://"+"www.izhuazhua.com//H5/orderv14/";
+    window.wxData = {imgUrl: "http://s.izhuazhua.com/res/img/websass/sharelogo.png",
+        link: protocol+"://" + host + "/H5/orderv14/index.jsp",
+        title: "",
+        desc: ""}
+
+    /***
+     * var dInp = document.getElementById("js-date"),
+     date = dInp.valueAsDate; // 将value以日期对象形式返回
+     // 下面就是使用日期对象获取相应数据了
+     var Year = date.getFullYear(); // 完整年
+     var Month = date.getMonth() + 1; // 月
+     var Day = date.getDate(); // 日
+     */
+    //document.getElementById('js-date').valueAsDate = new Date();
+    //var time1 = new Date(document.getElementById('js-date').valueAsDate).Format("yyyy-MM-dd");
+</script>
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    template.openTag = '{%';
+    template.closeTag = '%}';
+    helper.setTitle("确认支付");
+</script>
+
+</body>
+</html>

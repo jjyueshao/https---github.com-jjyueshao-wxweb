@@ -1,0 +1,191 @@
+.jjys {
+    background-image: url(../img/spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.jjys-aboatjj {
+    width: 30px;
+    height: 30px;
+    background-position: -5px -5px;
+}
+
+.jjys-addpic {
+    width: 120px;
+    height: 120px;
+    background-position: -45px -5px;
+}
+
+.jjys-big-start3 {
+    width: 150px;
+    height: 240px;
+    background-position: -175px -5px;
+}
+
+.jjys-big-start4 {
+    width: 150px;
+    height: 240px;
+    background-position: -335px -5px;
+}
+
+.jjys-big-start5 {
+    width: 150px;
+    height: 240px;
+    background-position: -495px -5px;
+}
+
+.jjys-big-start6 {
+    width: 150px;
+    height: 240px;
+    background-position: -5px -255px;
+}
+
+.jjys-big-start7 {
+    width: 150px;
+    height: 240px;
+    background-position: -165px -255px;
+}
+
+.jjys-big-start8 {
+    width: 150px;
+    height: 240px;
+    background-position: -325px -255px;
+}
+
+.jjys-check {
+    width: 40px;
+    height: 40px;
+    background-position: -485px -255px;
+}
+
+.jjys-check-focus {
+    width: 40px;
+    height: 40px;
+    background-position: -535px -255px;
+}
+
+.jjys-detail-phone {
+    width: 33px;
+    height: 29px;
+    background-position: -585px -255px;
+}
+
+.jjys-fav-grid {
+    width: 38px;
+    height: 37px;
+    background-position: -585px -294px;
+}
+
+.jjys-fav18 {
+    width: 18px;
+    height: 16px;
+    background-position: -628px -255px;
+}
+
+.jjys-fav18-grid {
+    width: 18px;
+    height: 16px;
+    background-position: -485px -341px;
+}
+
+.jjys-fav40 {
+    width: 40px;
+    height: 35px;
+    background-position: -513px -341px;
+}
+
+.jjys-fav40-grid {
+    width: 40px;
+    height: 36px;
+    background-position: -563px -341px;
+}
+
+.jjys-fav60 {
+    width: 60px;
+    height: 53px;
+    background-position: -485px -387px;
+}
+
+.jjys-fav60-grid {
+    width: 60px;
+    height: 54px;
+    background-position: -555px -387px;
+}
+
+.jjys-jjyz-rz {
+    width: 157px;
+    height: 24px;
+    background-position: -485px -451px;
+}
+
+.jjys-line-star {
+    width: 118px;
+    height: 16px;
+    background-position: -485px -485px;
+}
+
+.jjys-line-star-focus {
+    width: 118px;
+    height: 16px;
+    background-position: -5px -511px;
+}
+
+.jjys-myfav {
+    width: 30px;
+    height: 30px;
+    background-position: -613px -341px;
+}
+
+.jjys-mykf {
+    width: 30px;
+    height: 30px;
+    background-position: -613px -485px;
+}
+
+.jjys-myorder {
+    width: 30px;
+    height: 30px;
+    background-position: -133px -525px;
+}
+
+.jjys-orderstatusoff {
+    width: 15px;
+    height: 15px;
+    background-position: -633px -281px;
+}
+
+.jjys-orderstatuson {
+    width: 15px;
+    height: 15px;
+    background-position: -485px -306px;
+}
+
+.jjys-outer-tx {
+    width: 240px;
+    height: 240px;
+    background-position: -655px -5px;
+}
+
+.jjys-paysuc {
+    width: 190px;
+    height: 190px;
+    background-position: -658px -255px;
+}
+
+.jjys-right-icon {
+    width: 18px;
+    height: 30px;
+    background-position: -858px -255px;
+}
+
+.jjys-weixin {
+    width: 100px;
+    height: 100px;
+    background-position: -653px -455px;
+}
+
+.jjys-zfb {
+    width: 100px;
+    height: 100px;
+    background-position: -763px -455px;
+}
