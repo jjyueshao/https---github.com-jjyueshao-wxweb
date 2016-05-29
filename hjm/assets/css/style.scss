@@ -1,0 +1,284 @@
+//----------------公共全局变量----------
+//背景灰：#edf0f7
+//粉红色：#fc87b5
+//副标题：#b2b2b2
+//详情里面的副标题：#888888
+$bgGay:#edf0f7;
+$bgPink:#fc87b5;
+$subTitle:#b2b2b2;
+$subColor:#888888;
+@mixin activeBg{
+  background-color: rgba(0,0,0,.1);
+}
+
+//----------------公共全局代码----------start
+html {
+  position: relative;
+  color: #000;
+}
+
+body {
+  min-height: 480px;
+  font-family: sans-serif, "Helvetica Neue", Helvetica, Arial;
+  font-size: 12px;
+  color: #333;
+  padding: 0;
+  -webkit-user-select: none;
+  width: 375px;
+  margin: 0 auto;
+  /*box-shadow: rgb(123, 101, 117) 0px 0px 160px 0px;*/
+}
+
+cite, em {
+  font-style: normal;
+}
+
+article, section {
+  display: block;
+}
+
+dl, dd, ul, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  vertical-align: top;
+}
+.cb{
+  clear:both;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.cs {
+  zoom: 1;
+}
+
+.cs:after {
+  content: " ";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+}
+
+.oh {
+  overflow: hidden;
+}
+
+.oa {
+  overflow: auto;
+}
+
+.se {
+  overflow: hidden;
+  text-indent: -999em;
+  *background: url(#);
+}
+
+.tc {
+  text-align: center;
+}
+
+.tl {
+  text-align: left;
+}
+
+.tr {
+  text-align: right;
+}
+
+.db {
+  display: block;
+}
+
+.di {
+  display: inline;
+}
+
+.dk {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+//----------------公共全局代码----------end
+
+//----------------首页-------------
+.wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin:0 auto;
+
+  //设置宝宝预产期
+  .register{
+    height:45px;
+    width:100%;
+    line-height: 45px;
+    color: $bgPink;
+    font-size: 14px;
+    .icon-2{
+      margin:12px 15px 0 10px;
+      img{
+        width:22px;
+      }
+    }
+    .icon-3{
+      margin:13px 15px 0 0;
+      img{
+        width:9px;
+      }
+    }
+    &:active{
+      @include activeBg;
+    }
+  }
+
+  // 幻灯片
+  .jm-banner {
+    position: relative;
+    width: 100%;
+
+    .swiper-container{
+      width:100%;
+      img{
+        width:100%;
+      }
+      .swiper-pagination{
+        .swiper-pagination-bullet{
+          width: 13px;
+          height: 4px;
+          display: inline-block;
+          border-radius: 0;
+          background: #fc87b5;
+          opacity: .3;
+        }
+        .swiper-pagination-bullet-active{
+          opacity:1;
+          background: $bgPink;
+        }
+      }
+
+    }
+  }
+
+  .service{
+    background-color: $bgGay;
+    //住家月子服务
+    .jm-service1{
+      margin-top: 20px;
+      background-color: #FFF;
+      .title{
+        text-align: center;
+        font-size: 18px;
+        color: #000000;
+        margin: 15px 0;
+      }
+      .part1{
+        margin:0 15px;
+        img{
+          width:100%
+        }
+      }
+      .part2{
+        margin:0 15px;
+        .ad{
+          width:165px;
+          margin: 20px 0 10px;
+          img{
+            width:100%;
+          }
+          .text{
+            width: 100%;
+            height: 25px;
+            line-height: 30px;
+            color: #FFF;
+            background-color: #fc87b5;
+            text-align: center;
+            font-size: 14px;
+          }
+          .subText{
+            text-align: center;
+            margin:10px 0;
+            font-size: 12px;
+            div{
+              color: $subTitle;
+              display: inline-block;
+              &.through{
+                text-decoration: line-through;
+              }
+              img{
+                width:12px;
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    //服务保障
+    .jm-service2{
+      .items{
+        margin:0 15px;
+        .item{
+          width: 70px;
+          float: left;
+          margin: 0 8px;
+          padding-bottom: 20px;
+          .circle{
+            width:59px;
+            border:1px solid $bgPink;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;;
+            margin: 0 auto;
+            img{
+              width: 40px;
+              display: inline-block;
+              margin: 10px;
+            }
+          }
+          .text{
+            color:$subColor;
+            font-size: 14px;
+            margin-top: 10px;
+            width:100%;
+            text-align: center;
+          }
+          &:active{
+            @include activeBg;
+          }
+        }
+        .arrowIcon{
+          float:left;
+          margin:25px 8px;
+          img{
+            width:4px;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
