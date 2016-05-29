@@ -7,11 +7,11 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <title>支付</title>
-<link rel="stylesheet" href="data/css/zhifu.css">
-<link href="data/css/common.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="data/js/jquery-1.9.1.js" ></script>
-<script type="text/javascript" src="data/js/date.js" ></script>
-<script type="text/javascript" src="data/js/iscroll.js" ></script>
+<link rel="stylesheet" href="../css/zhifu.css">
+<link href="../css/common.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/lib/jquery-2.1.1.min.js" ></script>
+<script type="text/javascript" src="../js/pay/date.js" ></script>
+<script type="text/javascript" src="../js/pay/iscroll.js" ></script>
 	<script type="text/javascript">
 		if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
 			var version = parseFloat(RegExp.$1);
@@ -103,7 +103,7 @@ window.onload = function() {
 		<div class="yuesao_jianjie">
 			<div class="yuesao">
             	<div class="yuesao_name">蔡明姣</div>
-                <div class="yuesao_rz"><img src="data/images/zhifu/renzheng_2x.png"/></div>
+                <div class="yuesao_rz"><img src="../images/zhifu/renzheng_2x.png"/></div>
             </div>
             <div style="clear:both;"></div>
 			<div><span style="font-size:1rem;color:#888;">服务项目：</span><span style="font-size:2rem;color:#333;">26天月子服务</span></div>
@@ -118,7 +118,7 @@ window.onload = function() {
     	<div class="demo">
         	<div class="lie" style="margin-left:4%;color:#333;font-size:1.65rem;">
             	预约时间  <input  id="beginTime" class="kbtn" value=""/>
-            	<div class="xzk"><img src="data/images/zhifu/right_2x.png"/></div>
+            	<div class="xzk"><img src="../images/zhifu/right_2x.png"/></div>
             </div>
    		</div>
         <div id="datePlugin"></div>
@@ -153,7 +153,7 @@ window.onload = function() {
         </div>
         
         <div class="xuanzediqu">
-        	<span class="xzdq_tt">选择地区</span><span class="xzdq_xx">广东省 深圳市 南山区</span><div class="xzk1"><img src="data/images/zhifu/right_2x.png"/></div>
+        	<span class="xzdq_tt">选择地区</span><span class="xzdq_xx">广东省 深圳市 南山区</span><div class="xzk1"><img src="../images/zhifu/right_2x.png"/></div>
         </div>
         
         <div class="lianxidianhua">
@@ -169,7 +169,7 @@ window.onload = function() {
             	<div class="fwzj_left">26天月子服务</div>
                 <div class="fwzj_right">￥8700元</div>
             </div>
-            <div class="xzk2"><img src="data/images/zhifu/right_2x.png"/></div>
+            <div class="xzk2"><img src="../images/zhifu/right_2x.png"/></div>
         </div>
         
         <div class="fw_zj">
@@ -196,7 +196,9 @@ window.onload = function() {
         
         <div class="beizhu">
         	<div class="bz_box">
-            	<span>备注您的特殊要求，我们会尽量满足。</span>
+            	<span>
+					<textarea  placeholder="备注您的特殊要求，我们会尽量满足。"></textarea>
+				</span>
                 <div class="jishu">
                 	<span>0/200</span>
                 </div>
