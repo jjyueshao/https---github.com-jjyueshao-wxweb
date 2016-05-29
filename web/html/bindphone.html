@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="../css/gb.css"/>
     <link rel="stylesheet" href="../css/weui.css"/>
+
     <script type="text/javascript">
         if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
             var version = parseFloat(RegExp.$1);
@@ -44,7 +45,7 @@
 <div class="w750 backwhite f34  border-bottom">
     <div class="w690 h88 c3 ">
         <div class="fl form-title">手机号码</div>
-        <div class="fl form-input"><input type="text" placeholder="请填写您的手机号码"/></div>
+        <div class="fl form-input"><input type="tel" placeholder="请填写您的手机号码" id="iptPhone"/></div>
         <div class="fr"></div>
     </div>
 </div>
@@ -52,11 +53,11 @@
     <div class="w690  h88 c3 cb ">
         <div class="fl form-title">验证码</div>
         <div class="fl form-input"><input type="text" placeholder="请填写验证码"/></div>
-        <div class="fr"><div class="get-code-btn">获取验证码</div></div>
+        <div class="fr"><div class="get-code-btn" id="btnGetSMS">获取验证码</div></div>
     </div>
 </div>
 
-<div class="w750 backwhite f34 border-bottom">
+<div class="w750 backwhite f34 border-bottom hide">
     <div class="w690 h88 c3 cb ">
         <div class="fl form-title">宝妈预产期</div>
         <div class="fl cb2 form-input">
@@ -68,7 +69,7 @@
 </div>
 
 <div class="w690">
-    <div class="submit-btn">提交</div>
+    <div class="submit-btn" id="btnLogin">提交</div>
 </div>
 
 <div id="toast">
@@ -148,6 +149,101 @@
     template.openTag = '{%';
     template.closeTag = '%}';
     helper.setTitle("绑定手机");
+</script>
+
+
+<script type="text/javascript">
+
+    var phone = "";
+    var smsCode = "";
+
+    $('#btnGetSMS').click(function(){
+        var obj = {};
+        var phone =$("#iptPhone").val();
+        if(!chekPhone()){
+            return;
+        }
+        util.hsTime('#btnGetSMS');
+
+        var handler = function (data){
+            var errcode = data.errorCode;
+            if(errcode == 0){
+                //
+            }
+        };
+
+        var obj = {};
+        obj['phone'] = phone;
+        obj['type'] =2;
+        //doReuestWitchButton('#btnGetSMS','GetSMSCode', obj, g_http_headers, handler);
+    });
+    $('#btnLogin').click(function(){
+
+        var phone=$("#iptPhone").val();
+        var smsCode=$("#iptSMSCode").val();
+        if(!chekPhone()){
+            return;
+        }
+        if(isEmpty(smsCode)){
+            showMsg("请输入验证码！");
+            return false;
+        }
+       /* var handler= function (data){
+            var errcode = data.errorCode;
+            if(errcode == 0){
+                if(data.body.sId){
+                    var exp = new Date();
+                    exp.setTime(exp.getTime() + 1000*24*60*60*1000);
+                    document.cookie = "sid=" + encodeURIComponent (data.body.sId) + ";path=/;expires="+ exp.toGMTString();
+                }
+                window.location.href='<%=topage%>';
+            }
+        };*/
+
+        var obj = {};
+        obj['phone'] 	= phone;
+        obj['code'] 	= smsCode;
+        //doReuestWitchButton('#btnLogin','BindPhone', obj, g_http_headers, handler);
+        $("#iptSMSCode").val('');
+    });
+    $("#iptPhone").blur(function(){
+        chekPhone();
+    });
+    var isMobile = function(phone){
+        var reg = /^1[3|4|5|7|8][0-9]\d{8}$/;
+        if (reg.test(phone)) {
+            return true;
+        }
+        return false;
+    }
+    function showMsg(msg){
+        alert(msg);
+    }
+    function chekPhone(){
+        if(!isMobile($("#iptPhone").val())){
+            showMsg("输入正确的手机号");
+            return false;
+        }
+        return true;
+    }
+
+    var util = {
+        wait: 30,
+        hsTime: function (that) {
+            var _this = this;
+            //console.log("wait:" + _this.wait);
+            if (_this.wait == 0) {
+                $(that).addClass("begin").html('获取验证码');
+                _this.wait = 45;
+            } else {
+                $(that).removeClass("begin").html('重新获取（' + _this.wait + '）');
+                _this.wait--;
+                setTimeout(function () {
+                    _this.hsTime(that);
+                }, 1000)
+            }
+        }
+    }
 </script>
 </body>
 </html>

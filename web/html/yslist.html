@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../css/gb.css"/>
     <link rel="stylesheet" href="../css/sprite.css"/>
     <link rel="stylesheet" href="../css/weui.css"/>
+    <link rel="stylesheet" href="../js/plugs/spinningwheel-didi.css"/>
     <script type="text/javascript">
         if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
             var version = parseFloat(RegExp.$1);
@@ -158,6 +159,62 @@
         </div>
     </div>
 
+<div class="weui_mask js-filter-mask"></div>
+<div class="fixed-bottom filter-choose-ctn backwhite js-filter-choose-ctn">
+    <div class="w690 h88">
+        <div class="fl f32 c8">取消</div>
+        <div class="fl f34 c3 ml216">筛选月嫂</div>
+        <div class="fr f32 cff72ae">确定</div>
+    </div>
+    <div class="sperate-grid w750"></div>
+    <div class="w750 backwhite border-bottom f32 c3">
+        <div class="w690 h86">
+            <div class="fl h86 lh86 t">预产期</div>
+            <div class="fl h86 lh86 i ml120 js-birth-ctn">2016年5月20日</div>
+            <div class="fr jjys jjys-right-icon mt26"></div>
+        </div>
+    </div>
+    <div class="w750 backwhite border-bottom f32 c3 cb js-filter-day-ctn">
+        <div class="w690">
+            <div class="lh32 mt24">服务天数</div>
+            <div class="filter-item-ctn mt24 mb40">
+                <div class="fl filter-item-base">不限</div>
+                <div class="fl filter-item-base ml40">26天</div>
+                <div class="fl filter-item-base ml40">42天</div>
+                <div class="fl filter-item-base ml40">78天</div>
+            </div>
+        </div>
+    </div>
+    <div class="w750 backwhite border-bottom f32 c3 cb js-filter-expri-ctn">
+        <div class="w690">
+            <div class="lh32 mt24">经验</div>
+            <div class="filter-item-ctn mt24 mb40">
+                <div class="fl filter-item-base">不限</div>
+                <div class="fl filter-item-base ml40">1~2年</div>
+                <div class="fl filter-item-base ml40">3~5年</div>
+                <div class="fl filter-item-base ml40">5年以上</div>
+            </div>
+        </div>
+    </div>
+    <div class="w750 backwhite border-bottom f32 c3 cb js-filter-age-ctn">
+        <div class="w690">
+            <div class="lh32 mt24">年龄</div>
+            <div class="filter-item-ctn mt24 mb40">
+                <div class="fl filter-item-base">不限</div>
+                <div class="fl filter-item-base ml40">30岁以下</div>
+                <div class="fl filter-item-base ml40">30~40岁</div>
+                <div class="fl filter-item-base ml40">40岁以上</div>
+            </div>
+        </div>
+    </div>
+    <div class="w750 backwhite f32 c3">
+        <div class="w690 h86">
+            <div class="fl h86 lh86 t">籍贯</div>
+            <div class="fl h86 lh86 i ml120">湖南省</div>
+            <div class="fr jjys jjys-right-icon mt26"></div>
+        </div>
+    </div>
+</div>
 <div id="toast">
     <div class="weui_mask_transparent"></div>
     <div class="weui_toast">
@@ -189,6 +246,7 @@
 <script src="../js/lib/fastclick.js"></script>
 <script src="../js/utils/template.js"></script>
 <script src="../js/utils/utils.js"></script>
+<script src="../js/plugs/spinningwheel.js"></script>
 <script type="text/javascript">
     window.onerror=function(e){
         //alert(JSON.stringify(e));
@@ -235,7 +293,108 @@
     template.openTag = '{%';
     template.closeTag = '%}';
     helper.setTitle("月嫂列表");
-</script>
+    $(function(){
+        $(".js-filter-mask").bind("click",function(){
+            $(".js-filter-mask").css("display","none");
+            $(".js-filter-choose-ctn").css("display","none");
+        })
 
+        $(".js-filter-day-ctn .filter-item-base").bind("click",function(){
+            $(".js-filter-day-ctn .filter-item-base").removeClass("focus")
+            $(this).addClass("focus");
+        })
+
+        $(".js-filter-expri-ctn .filter-item-base").bind("click",function(){
+            $(".js-filter-expri-ctn .filter-item-base").removeClass("focus");
+            $(this).addClass("focus");
+        })
+
+        $(".js-filter-age-ctn .filter-item-base").bind("click",function(){
+            $(".js-filter-age-ctn .filter-item-base").removeClass("focus");
+            $(this).addClass("focus");
+        })
+
+
+        /*****选择日期***/
+        $(".js-birth-ctn").bind("click",function(){
+            BirthDay.openBirthDate();
+            $("#sw-wrapper").css("display","none");
+            //$(".js-choose-birth").removeClass("hide");
+            var s = 0;
+            if(helper.isAndroid()){
+                s = 100;
+            }
+            setTimeout(function(){
+                $(".js-mask").css("display","block");
+                $("#sw-wrapper").css("display","block");
+            },s);
+        });
+
+    })
+
+
+var BirthDay = {
+    openBirthDate:function() {//日期选择
+        var self = this;
+        var now = new Date();
+        var days = { };
+        var years = {}
+        var months = { 1: '1月', 2: '2月', 3: '3月', 4: '4月', 5: '5月', 6: '6月', 7: '7月', 8: '8月', 9: '9月', 10: '10月', 11: '11月', 12: '12月' };
+        for (var i = 1; i <32; i += 1) {
+            days[i] = i+"日";
+        }
+        for (i = now.getFullYear() - 10; i < now.getFullYear() + 1; i += 1) {
+            years[i] = i+"年";
+        }
+        SpinningWheel.addSlot(years, 'center', 2014);
+        SpinningWheel.addSlot(months, 'center', 4);
+        SpinningWheel.addSlot(days, 'center', 12);
+        SpinningWheel.setCancelAction(self.cancel);
+        SpinningWheel.setDoneAction(self.done);
+        SpinningWheel.open();
+    },
+    done:function () {
+        var results = SpinningWheel.getSelectedValues();
+        console.info('values: ' + results.values.join(' ') + '<br />keys: ' + results.keys.join(', '))
+        var y = results.keys[0];
+        var m = results.keys[1];
+        var d = results.keys[2];
+        if(helper.isEmpty(y)){
+            helper.showMsg("请选择年份");
+            return;
+        }
+        if(helper.isEmpty(m)){
+            helper.showMsg("请选择月份");
+            return;
+        }
+        if(y && m&&d){
+            if(m<10){
+                m="0"+m;
+            }
+            if(d<10){
+                d="0"+d;
+            }
+            var bir=y+"年"+m+"月"+d+"日";
+            var birval = y+"-"+m+"-"+d;
+            ////$("#age").html(bir);
+            // PetInfo['birth']=y+""+m;
+           // $(".js-birth-val").val(birval);
+            $(".js-birth-ctn").html(bir);
+            $(".js-birth-ctn").attr("val",birval);
+        }
+        $(".js-mask").css("display","none");
+        //_store("mypetinfoinput")._reInitSaveBtn();//保持原有逻辑不变
+
+    },
+    cancel:function () {
+        console.info("cancel");
+        $(".js-mask").css("display","none");
+    }
+
+}
+
+
+
+</script>
 </body>
 </html>
