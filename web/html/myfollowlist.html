@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="robots" content="none">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes"/>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../css/gb.css"/>
+    <link rel="stylesheet" href="../css/sprite.css"/>
+    <link rel="stylesheet" href="../css/weui.css"/>
+    <link rel="stylesheet" href="../js/plugs/spinningwheel-didi.css"/>
+    <script type="text/javascript">
+        if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                var phoneScale = parseInt(window.screen.width)/750;
+                document.write('<meta name="viewport" content="width=750, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=750, target-densitydpi=device-dpi">');
+            }
+        }else{
+            document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+        //微信去掉下方刷新栏
+        if(navigator.userAgent.indexOf('MicroMessenger') >= 0){
+            document.addEventListener('WeixinJSBridgeReady', function() {
+                WeixinJSBridge.call('hideToolbar');
+            });
+        }
+    </script>
+    <script type='text/javascript' src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js'></script>
+</head>
+<body class="backf8">
+
+    <div class="yslist-ctn">
+        <div class="w750 ys-item mt30">
+            <div class="w750 border-bottom">
+                <div class="w750 backwhite">
+                    <div class="service-info-detail w690">
+                        <div class="fl mt30">
+                            <div class="jjys jjys-big-start6 relative star-img-info">
+                                <div class="img-ctn"><img src="../images/tx001.png" alt="" width="142" height="142"/></div>
+                            </div>
+                        </div>
+                        <div class="fl ml30 mt26 ys-base-info-ctn" style="width: 510px;">
+                            <div class="ys-base-info w510 h54">
+                                <div class="fl c3 f34">李海霞</div>
+                                <div class="fl jjys jjys-jjyz-rz mt15 mll"></div>
+                                <div class="fl jjys jjys-line-star mt15 mll" style="margin-top: 22px;">
+                                    <div class="jjys jjys-line-star-focus" style="width: 50px;"></div>
+                                </div>
+                                <div class="fl" style="font-size: 24px;color: #646464;margin-top: 10px;margin-left: 12px;">4.2分</div>
+                            </div>
+                            <div class="ys-fee-info mt24" style="color: #6a6a6a;font-size: 28px;">
+                                <div>李姐2009年开始做月嫂，带过60多个宝宝
+                                    其中包括五对双胞胎，四个早产儿。
+                                </div>
+                            </div>
+                            <div class="ys-fee-info mt28 relative">
+                                <div><span class="red50">￥13800元</span>/26天</div>
+                                <div class="cancel-follow-btn">取消关注</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w750 ys-item mt30">
+            <div class="w750 border-bottom">
+                <div class="w750 backwhite">
+                    <div class="service-info-detail w690">
+                        <div class="fl mt30">
+                            <div class="jjys jjys-big-start6 relative star-img-info">
+                                <div class="img-ctn"><img src="../images/tx001.png" alt="" width="142" height="142"/></div>
+                            </div>
+                        </div>
+                        <div class="fl ml30 mt26 ys-base-info-ctn" style="width: 510px;">
+                            <div class="ys-base-info w510 h54">
+                                <div class="fl c3 f34">李海霞</div>
+                                <div class="fl jjys jjys-jjyz-rz mt15 mll"></div>
+                                <div class="fl jjys jjys-line-star mt15 mll" style="margin-top: 22px;">
+                                    <div class="jjys jjys-line-star-focus" style="width: 50px;"></div>
+                                </div>
+                                <div class="fl" style="font-size: 24px;color: #646464;margin-top: 10px;margin-left: 12px;">4.2分</div>
+                            </div>
+                            <div class="ys-fee-info mt24" style="color: #6a6a6a;font-size: 28px;">
+                                <div>李姐2009年开始做月嫂，带过60多个宝宝
+                                    其中包括五对双胞胎，四个早产儿。
+                                </div>
+                            </div>
+                            <div class="ys-fee-info mt28 relative">
+                                <div><span class="red50">￥13800元</span>/26天</div>
+                                <div class="cancel-follow-btn">取消关注</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w750 ys-item mt30">
+            <div class="w750 border-bottom">
+                <div class="w750 backwhite">
+                    <div class="service-info-detail w690">
+                        <div class="fl mt30">
+                            <div class="jjys jjys-big-start6 relative star-img-info">
+                                <div class="img-ctn"><img src="../images/tx001.png" alt="" width="142" height="142"/></div>
+                            </div>
+                        </div>
+                        <div class="fl ml30 mt26 ys-base-info-ctn" style="width: 510px;">
+                            <div class="ys-base-info w510 h54">
+                                <div class="fl c3 f34">李海霞</div>
+                                <div class="fl jjys jjys-jjyz-rz mt15 mll"></div>
+                                <div class="fl jjys jjys-line-star mt15 mll" style="margin-top: 22px;">
+                                    <div class="jjys jjys-line-star-focus" style="width: 50px;"></div>
+                                </div>
+                                <div class="fl" style="font-size: 24px;color: #646464;margin-top: 10px;margin-left: 12px;">4.2分</div>
+                            </div>
+                            <div class="ys-fee-info mt24" style="color: #6a6a6a;font-size: 28px;">
+                                <div>李姐2009年开始做月嫂，带过60多个宝宝
+                                    其中包括五对双胞胎，四个早产儿。
+                                </div>
+                            </div>
+                            <div class="ys-fee-info mt28 relative">
+                                <div><span class="red50">￥13800元</span>/26天</div>
+                                <div class="cancel-follow-btn">取消关注</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="toast">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <i class="weui_icon_toast"></i>
+        <p class="weui_toast_content">已完成</p>
+    </div>
+</div>
+<div id="loadingToast" class="weui_loading_toast">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">数据加载中</p>
+    </div>
+</div>
+<script src="../js/lib/jquery-2.1.1.min.js"></script>
+<script src="../js/lib/fastclick.js"></script>
+<script src="../js/utils/template.js"></script>
+<script src="../js/utils/utils.js"></script>
+<script src="../js/plugs/spinningwheel.js"></script>
+<script type="text/javascript">
+    window.onerror=function(e){
+        //alert(JSON.stringify(e));
+        //alert(e);
+        //console.log(e);
+    }
+    var protocol = helper.getProtocol();
+    var host = window.location.host;
+    window.g_Domain = protocol+'://'+host+'/';
+    //window.g_base = 'http://'+host+'/H5/orderv14/';
+    window.IMGCACHE_DOMAIN = protocol+'://'+host;
+    var g_isPubGray = true;
+    //window.g_Domain = 'wx.aviclub.net';
+    //window.IMGCACHE_DOMAIN = 'wx.aviclub.net/images';
+    window.TQ = {
+        debug:function(){
+            return true;
+        },
+        _domains:{
+            main:host,
+            imgcache:host,
+            api:host
+        }
+    };
+    var g_host =protocol+"://"+"www.izhuazhua.com//H5/orderv14/";
+    window.wxData = {imgUrl: "http://s.izhuazhua.com/res/img/websass/sharelogo.png",
+        link: protocol+"://" + host + "/H5/orderv14/index.jsp",
+        title: "",
+        desc: ""}
+
+    /***
+     * var dInp = document.getElementById("js-date"),
+     date = dInp.valueAsDate; // 将value以日期对象形式返回
+     // 下面就是使用日期对象获取相应数据了
+     var Year = date.getFullYear(); // 完整年
+     var Month = date.getMonth() + 1; // 月
+     var Day = date.getDate(); // 日
+     */
+    //document.getElementById('js-date').valueAsDate = new Date();
+    //var time1 = new Date(document.getElementById('js-date').valueAsDate).Format("yyyy-MM-dd");
+</script>
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    template.openTag = '{%';
+    template.closeTag = '%}';
+    helper.setTitle("月嫂列表");
+    $(function(){
+        $(".js-filter-mask").bind("click",function(){
+            $(".js-filter-mask").css("display","none");
+            $(".js-filter-choose-ctn").css("display","none");
+        })
+
+        $(".js-filter-day-ctn .filter-item-base").bind("click",function(){
+            $(".js-filter-day-ctn .filter-item-base").removeClass("focus")
+            $(this).addClass("focus");
+        })
+
+        $(".js-filter-expri-ctn .filter-item-base").bind("click",function(){
+            $(".js-filter-expri-ctn .filter-item-base").removeClass("focus");
+            $(this).addClass("focus");
+        })
+
+        $(".js-filter-age-ctn .filter-item-base").bind("click",function(){
+            $(".js-filter-age-ctn .filter-item-base").removeClass("focus");
+            $(this).addClass("focus");
+        })
+
+
+        /*****选择日期***/
+        $(".js-birth-ctn").bind("click",function(){
+            BirthDay.openBirthDate();
+            $("#sw-wrapper").css("display","none");
+            //$(".js-choose-birth").removeClass("hide");
+            var s = 0;
+            if(helper.isAndroid()){
+                s = 100;
+            }
+            setTimeout(function(){
+                $(".js-mask").css("display","block");
+                $("#sw-wrapper").css("display","block");
+            },s);
+        });
+
+    })
+
+
+var BirthDay = {
+    openBirthDate:function() {//日期选择
+        var self = this;
+        var now = new Date();
+        var days = { };
+        var years = {}
+        var months = { 1: '1月', 2: '2月', 3: '3月', 4: '4月', 5: '5月', 6: '6月', 7: '7月', 8: '8月', 9: '9月', 10: '10月', 11: '11月', 12: '12月' };
+        for (var i = 1; i <32; i += 1) {
+            days[i] = i+"日";
+        }
+        for (i = now.getFullYear() - 10; i < now.getFullYear() + 1; i += 1) {
+            years[i] = i+"年";
+        }
+        SpinningWheel.addSlot(years, 'center', 2014);
+        SpinningWheel.addSlot(months, 'center', 4);
+        SpinningWheel.addSlot(days, 'center', 12);
+        SpinningWheel.setCancelAction(self.cancel);
+        SpinningWheel.setDoneAction(self.done);
+        SpinningWheel.open();
+    },
+    done:function () {
+        var results = SpinningWheel.getSelectedValues();
+        console.info('values: ' + results.values.join(' ') + '<br />keys: ' + results.keys.join(', '))
+        var y = results.keys[0];
+        var m = results.keys[1];
+        var d = results.keys[2];
+        if(helper.isEmpty(y)){
+            helper.showMsg("请选择年份");
+            return;
+        }
+        if(helper.isEmpty(m)){
+            helper.showMsg("请选择月份");
+            return;
+        }
+        if(y && m&&d){
+            if(m<10){
+                m="0"+m;
+            }
+            if(d<10){
+                d="0"+d;
+            }
+            var bir=y+"年"+m+"月"+d+"日";
+            var birval = y+"-"+m+"-"+d;
+            ////$("#age").html(bir);
+            // PetInfo['birth']=y+""+m;
+           // $(".js-birth-val").val(birval);
+            $(".js-birth-ctn").html(bir);
+            $(".js-birth-ctn").attr("val",birval);
+        }
+        $(".js-mask").css("display","none");
+        //_store("mypetinfoinput")._reInitSaveBtn();//保持原有逻辑不变
+
+    },
+    cancel:function () {
+        console.info("cancel");
+        $(".js-mask").css("display","none");
+    }
+
+}
+
+
+
+</script>
+</body>
+</html>

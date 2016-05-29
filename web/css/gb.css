@@ -727,3 +727,6 @@ body{word-wrap:break-word;}
     border:none;
     background: #ff72ae;
 }
+.cancel-follow-btn{
+    position: absolute;top:5px;right: 5px;width:160px;height: 50px;line-height: 50px;text-align: center;border:1px solid #ff72ae;color: #ff72ae;border-radius: 15px;
+}
