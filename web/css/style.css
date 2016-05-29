@@ -1,0 +1,297 @@
+html {
+  position: relative;
+  color: #000; }
+
+body {
+  min-height: 480px;
+  font-family: sans-serif, "Helvetica Neue", Helvetica, Arial;
+  font-size: 12px;
+  color: #333;
+  padding: 0;
+  -webkit-user-select: none;
+  width: 375px;
+  margin: 0 auto;
+  /*box-shadow: rgb(123, 101, 117) 0px 0px 160px 0px;*/ }
+
+cite, em {
+  font-style: normal; }
+
+article, section {
+  display: block; }
+
+dl, dd, ul, p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent; }
+
+img {
+  vertical-align: top; }
+
+.cb {
+  clear: both; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.cs {
+  zoom: 1; }
+
+.cs:after {
+  content: " ";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both; }
+
+.oh {
+  overflow: hidden; }
+
+.oa {
+  overflow: auto; }
+
+.tc {
+  text-align: center; }
+
+.tl {
+  text-align: left; }
+
+.tr {
+  text-align: right; }
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto; }
+  .wrapper .register {
+    height: 45px;
+    width: 100%;
+    line-height: 45px;
+    color: #fc87b5;
+    font-size: 14px; }
+    .wrapper .register .icon-2 {
+      margin: 12px 15px 0 10px; }
+      .wrapper .register .icon-2 img {
+        width: 22px; }
+    .wrapper .register .icon-3 {
+      margin: 13px 15px 0 0; }
+      .wrapper .register .icon-3 img {
+        width: 9px; }
+    .wrapper .register:active {
+      background-color: rgba(0, 0, 0, 0.1); }
+  .wrapper .jm-banner {
+    position: relative;
+    width: 100%; }
+    .wrapper .jm-banner .swiper-container {
+      width: 100%; }
+      .wrapper .jm-banner .swiper-container img {
+        width: 100%; }
+      .wrapper .jm-banner .swiper-container .swiper-pagination .swiper-pagination-bullet {
+        width: 13px;
+        height: 4px;
+        display: inline-block;
+        border-radius: 0;
+        background: #fc87b5;
+        opacity: .3; }
+      .wrapper .jm-banner .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+        opacity: 1;
+        background: #fc87b5; }
+  .wrapper .service {
+    position: relative;
+    background-color: #edf0f7; }
+    .wrapper .service .jm-service1 {
+      position: relative;
+      margin-top: 20px;
+      background-color: #FFF; }
+      .wrapper .service .jm-service1 .title {
+        text-align: center;
+        font-size: 18px;
+        color: #000000;
+        margin: 15px 0; }
+      .wrapper .service .jm-service1 .specialAd {
+        position: absolute;
+        right: 15px;
+        padding: 5px;
+        top: 13px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        color: #ef4f4f;
+        font-size: 12px;
+        border: 1px solid #ef4f4f; }
+        .wrapper .service .jm-service1 .specialAd:active {
+          background-color: rgba(0, 0, 0, 0.1); }
+      .wrapper .service .jm-service1 .part1 {
+        margin: 0 15px; }
+        .wrapper .service .jm-service1 .part1 img {
+          width: 100%; }
+      .wrapper .service .jm-service1 .part2 {
+        margin: 0 15px; }
+        .wrapper .service .jm-service1 .part2 .ad {
+          width: 165px;
+          margin: 20px 0 10px; }
+          .wrapper .service .jm-service1 .part2 .ad img {
+            width: 100%; }
+          .wrapper .service .jm-service1 .part2 .ad .text {
+            width: 100%;
+            height: 25px;
+            line-height: 30px;
+            color: #FFF;
+            background-color: #fc87b5;
+            text-align: center;
+            font-size: 14px; }
+          .wrapper .service .jm-service1 .part2 .ad .subText {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 12px; }
+            .wrapper .service .jm-service1 .part2 .ad .subText div {
+              color: #b2b2b2;
+              display: inline-block; }
+              .wrapper .service .jm-service1 .part2 .ad .subText div.through {
+                text-decoration: line-through; }
+              .wrapper .service .jm-service1 .part2 .ad .subText div img {
+                width: 12px;
+                margin-left: 5px; }
+    .wrapper .service .jm-service2 .items {
+      margin: 0 15px; }
+      .wrapper .service .jm-service2 .items .item {
+        width: 70px;
+        float: left;
+        margin: 0 8px;
+        padding-bottom: 20px; }
+        .wrapper .service .jm-service2 .items .item .circle {
+          width: 59px;
+          border: 1px solid #fc87b5;
+          -webkit-border-radius: 30px;
+          -moz-border-radius: 30px;
+          border-radius: 30px;
+          margin: 0 auto; }
+          .wrapper .service .jm-service2 .items .item .circle img {
+            width: 40px;
+            display: inline-block;
+            margin: 10px; }
+        .wrapper .service .jm-service2 .items .item .text {
+          color: #888888;
+          font-size: 14px;
+          margin-top: 10px;
+          width: 100%;
+          text-align: center; }
+        .wrapper .service .jm-service2 .items .item:active {
+          background-color: rgba(0, 0, 0, 0.1); }
+      .wrapper .service .jm-service2 .items .arrowIcon {
+        float: left;
+        margin: 25px 8px; }
+        .wrapper .service .jm-service2 .items .arrowIcon img {
+          width: 4px; }
+  .wrapper .calendar .month {
+    width: 100%;
+    background-color: #edf0f7; }
+    .wrapper .calendar .month > div {
+      line-height: 60px; }
+    .wrapper .calendar .month .leftArrow {
+      width: 10%;
+      -webkit-transform: rotate(180deg); }
+      .wrapper .calendar .month .leftArrow img {
+        display: inline-block;
+        margin-top: 24px;
+        width: 10px; }
+      .wrapper .calendar .month .leftArrow:active {
+        background-color: rgba(0, 0, 0, 0.1); }
+    .wrapper .calendar .month .content {
+      width: 80%;
+      text-align: center;
+      font-weight: bold;
+      color: #000;
+      font-size: 20px; }
+    .wrapper .calendar .month .rightArrow {
+      width: 10%; }
+      .wrapper .calendar .month .rightArrow img {
+        display: inline-block;
+        margin-top: 20px;
+        width: 10px; }
+      .wrapper .calendar .month .rightArrow:active {
+        background-color: rgba(0, 0, 0, 0.1); }
+  .wrapper .calendar .week {
+    width: 100%;
+    height: 60px;
+    background-color: #edf0f7; }
+    .wrapper .calendar .week ul {
+      width: 100%;
+      height: 100%; }
+      .wrapper .calendar .week ul li {
+        width: 14.2%;
+        text-align: center;
+        line-height: 60px;
+        font-size: 18px; }
+        .wrapper .calendar .week ul li span {
+          color: #888888; }
+  .wrapper .calendar .days {
+    width: 100%;
+    margin-top: 30px; }
+    .wrapper .calendar .days .dayItem {
+      position: relative;
+      width: 100%; }
+      .wrapper .calendar .days .dayItem .day {
+        width: 14.2%;
+        height: 30px;
+        float: left;
+        position: relative;
+        font-size: 18px;
+        text-align: center;
+        margin: 25px 0 0; }
+        .wrapper .calendar .days .dayItem .day:after {
+          content: '';
+          position: absolute;
+          top: 18px;
+          left: 47%;
+          width: 4px;
+          height: 4px;
+          border-radius: 2px;
+          background: #FFF; }
+        .wrapper .calendar .days .dayItem .day.active {
+          color: #fc87b5; }
+        .wrapper .calendar .days .dayItem .day.active:after {
+          background: #fc87b5; }
+  .wrapper .calendar .tips {
+    position: fixed;
+    left: 15px;
+    bottom: 30px;
+    width: 100%; }
+    .wrapper .calendar .tips .day {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      float: left;
+      position: relative;
+      font-size: 18px;
+      text-align: center;
+      color: #fc87b5;
+      border-radius: 25px;
+      border: 1px solid rgba(128, 128, 128, 0.27);
+      line-height: 50px; }
+      .wrapper .calendar .tips .day:after {
+        content: '';
+        position: absolute;
+        top: 33px;
+        left: 47%;
+        width: 4px;
+        height: 4px;
+        border-radius: 2px;
+        background: #fc87b5; }
+    .wrapper .calendar .tips .text {
+      display: inline-block;
+      font-size: 16px;
+      margin: 20px 10px;
+      color: #b2b2b2; }
+
+/*# sourceMappingURL=style.css.map */
