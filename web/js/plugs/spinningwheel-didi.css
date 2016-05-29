@@ -64,7 +64,17 @@
     right: 0;
     float: right
 }
-
+/***add**/
+#sw-title{
+    left:300px;
+    right: 300px;
+    position: absolute;
+    line-height: 86px;
+    height: 86px;
+    margin: 0;
+    font-size: 34px;
+    color: #000000
+}
 .sw-pressed {
     opacity: .4
 }
@@ -186,5 +196,4 @@
     color: #888888;
     font-size: 32px;
     font-weight: normal;
-
 }
