@@ -180,7 +180,8 @@ body{word-wrap:break-word;}
     height: 60px;
     line-height: 60px;
     margin-top:14px;
-    width: 170px;
+    /*width: 170px;*/
+    width: 200px;
 }
 .border-bottom{
     border-bottom: 1px solid #dfdfdf;
