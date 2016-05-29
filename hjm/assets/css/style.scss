@@ -99,19 +99,6 @@ img {
   text-align: right;
 }
 
-.db {
-  display: block;
-}
-
-.di {
-  display: inline;
-}
-
-.dk {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-}
 //----------------公共全局代码----------end
 
 //----------------首页-------------
@@ -174,9 +161,11 @@ img {
   }
 
   .service{
+    position: relative;
     background-color: $bgGay;
     //住家月子服务
     .jm-service1{
+      position: relative;
       margin-top: 20px;
       background-color: #FFF;
       .title{
@@ -184,6 +173,22 @@ img {
         font-size: 18px;
         color: #000000;
         margin: 15px 0;
+      }
+      .specialAd{
+        position: absolute;
+        right: 15px;
+        padding: 5px;
+        top: 13px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        color: #ef4f4f;
+        font-size: 12px;
+        border: 1px solid #ef4f4f;
+        &:active{
+          @include activeBg
+        }
+
       }
       .part1{
         margin:0 15px;
@@ -273,6 +278,139 @@ img {
 
     }
 
+  }
+
+  .calendar{
+    .month{
+      width:100%;
+      background-color: $bgGay;
+      &>div{
+        line-height:60px;
+      }
+      .leftArrow{
+        width:10%;
+        -webkit-transform: rotate(180deg);
+        img{
+          display: inline-block;
+          margin-top: 24px;
+          width: 10px;
+        }
+        &:active{
+          @include activeBg;
+        }
+      }
+      .content{
+        width:80%;
+        text-align: center;
+        font-weight:bold;
+        color: #000;
+        font-size: 20px;
+      }
+      .rightArrow{
+        width:10%;
+        img{
+          display: inline-block;
+          margin-top: 20px;
+          width: 10px;
+        }
+        &:active{
+          @include activeBg;
+        }
+      }
+    }
+    .week{
+      width:100%;
+      height:60px;
+      background-color: $bgGay;
+      ul{
+        width:100%;
+        height:100%;
+        li{
+          width:14.2%;
+          text-align: center;
+          line-height: 60px;
+          font-size: 18px;
+          span{
+            color:$subColor;
+          }
+          &.special{
+            //color:$bgPink;
+          }
+        }
+      }
+    }
+    .days{
+      width:100%;
+      margin-top: 30px;
+      .dayItem{
+        position: relative;
+        width:100%;
+        .day{
+          width:14.2%;
+          height:30px;
+          float: left;
+          position: relative;
+          font-size: 18px;
+          text-align: center;
+          margin: 25px 0 0;
+          &:after{
+            content: '';
+            position: absolute;
+            top: 18px;
+            left: 47%;
+            width: 4px;
+            height: 4px;
+            border-radius: 2px;
+            background:#FFF;
+          }
+          &.active{
+            color:$bgPink;
+          }
+          &.active:after{
+            background:$bgPink;
+          }
+        }
+      }
+    }
+
+    .tips{
+      position: fixed;
+      left:15px;
+      bottom:30px;
+      width:100%;
+
+      .day{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        float: left;
+        position: relative;
+        font-size: 18px;
+        text-align: center;
+        color:$bgPink;
+        border-radius: 25px;
+        border: 1px solid rgba(128, 128, 128, 0.27);
+        line-height: 50px;
+        &:after{
+          content: '';
+          position: absolute;
+          top: 33px;
+          left: 47%;
+          width: 4px;
+          height: 4px;
+          border-radius: 2px;
+          background:$bgPink;
+        }
+      }
+
+      .text{
+        display: inline-block;
+        font-size:16px;
+        margin:20px 10px;
+        color:$subTitle;
+      }
+
+    }
   }
 
 }

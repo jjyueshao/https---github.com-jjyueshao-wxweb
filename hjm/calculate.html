@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滴滴月嫂</title>
+    <script type="text/javascript">
+        if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                var phoneScale = parseInt(window.screen.width)/375;
+                document.write('<meta name="viewport" content="width=375, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=375, target-densitydpi=device-dpi">');
+            }
+        }else{
+            document.write('<meta name="viewport" content="width=375, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+    </script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="assets/js/zepto.min.js"></script>
+</head>
+<body>
+    <section class="wrapper">
+        <div class="calendar">
+            <section class="month">
+                <div class="leftArrow fl">
+                    <img src="assets/images/icon_5.png" alt="">
+                </div>
+                <div class="content fl js-month">
+                    <span>2016年6月</span>
+                </div>
+                <div class="rightArrow fl">
+                    <img src="assets/images/icon_5.png" alt="">
+                </div>
+                <div class="cb"></div>
+            </section>
+            <section class="week">
+                <ul>
+                    <li class="fl special">日</li>
+                    <li class="fl">一</li>
+                    <li class="fl">二</li>
+                    <li class="fl">三</li>
+                    <li class="fl">四</li>
+                    <li class="fl">五</li>
+                    <li class="fl special">六</li>
+                    <li class="cb"></li>
+                </ul>
+            </section>
+            <section class="days">
+                <div class="dayItem">
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="cb"></div>
+                </div>
+                <div class="dayItem">
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="cb"></div>
+                </div>
+                <div class="dayItem">
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="cb"></div>
+                </div>
+                <div class="dayItem">
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="cb"></div>
+                </div>
+                <div class="dayItem">
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="cb"></div>
+                </div>
+                <div class="dayItem">
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="cb"></div>
+                </div>
+            </section>
+            <section class="tips">
+                <span class="day">8</span> <span class="text">已占用</span>
+            </section>
+
+            <script>
+                $(function () {
+                    var calendar = {
+                        monthDom:'.js-month',
+                        dayDom:'.day',
+
+                        ynow:0,
+                        mnow:0,
+                        dnow:0,
+                        m_days:[],
+
+                        data:{
+                            '2015':{          //ajax 返回的数据,大key:为当前年份, key:为月份(注:月份要减 1), value:[]为被占用的天数, 如:2015.5.29, 为:{'2015':{'4':[29]}
+                                '11':[2,4,6,7,8],
+                                '10':[24,3,25,2]
+                            },
+                            '2016':{
+                                '0':[2,4,6,7,8],
+                                '3':[24,3,25,2]
+                            }
+                        },
+
+                        init:function () {
+                            var nstr=new Date(); //当前Date
+                            this.ynow=nstr.getFullYear(); //年份
+                            this.mnow=nstr.getMonth(); //月份
+                            this.dnow=nstr.getDate(); //今日日期
+                            this.getMdays(this.ynow);
+                            this.showMonth(this.ynow, this.mnow);
+                            this.showDays(this.ynow,this.mnow);
+                        },
+
+                        reload:function () {
+                            $(this.dayDom).html('');
+                            $(this.dayDom).removeClass("active");
+                        },
+
+                        getMdays:function (y) {
+                            this.m_days =[31,28+this.is_leap(y),31,30,31,31,30,31,30,31,30,31];
+                        },
+
+                        is_leap:function(year) {
+                            return (year%100==0?(year%400==0?1:0):(year%4==0?1:0));
+                        },
+
+                        getNextMonth:function () {
+                            if(this.mnow == 11){
+                                this.mnow = 0;
+                                this.ynow ++;
+                            }else{
+                                this.mnow ++;
+                            }
+                            this.reload();
+                            this.showMonth(this.ynow, this.mnow);
+                            this.showDays(this.ynow, this.mnow);
+                        },
+
+                        getLastMonth:function () {
+                            if(this.mnow == 0){
+                                this.mnow = 11;
+                                this.ynow --;
+                            }else{
+                                this.mnow --;
+                            }
+                            this.reload();
+                            this.showMonth(this.ynow, this.mnow);
+                            this.showDays(this.ynow, this.mnow);
+                        },
+
+                        showMonth:function (y, m) {
+                            $(this.monthDom).html(y+'年'+(m+1)+'月');
+                        },
+
+                        showDays:function (y,m) {
+                            var n1str=new Date(y,m,1); //当月第一天Date资讯
+                            var wnow =n1str.getDay(); //当月第一天星期几
+                            var size = $(this.dayDom).size();
+                            for(var i = 0; i < this.m_days[m]; i++){
+                                $(this.dayDom).eq(wnow+i).html(i+1);
+
+                                if(this.data[y]&&this.data[y][m]){   //判断这月是否存在被占用的天数
+                                    for(var j = 0; j < this.data[y][m].length; j++){
+                                        if((i+1) == this.data[y][m][j]){
+                                            $(this.dayDom).eq(wnow+i).addClass("active");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    };
+
+                    calendar.init();
+
+                    $(".leftArrow").on("click", function () {
+                        calendar.getLastMonth();
+                    });
+
+                    $(".rightArrow").on("click", function () {
+                        calendar.getNextMonth();
+                    })
+                })
+            </script>
+
+        </div>
+    </section>
+</body>
+</html>
