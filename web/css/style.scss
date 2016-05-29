@@ -160,6 +160,7 @@ img {
     }
   }
 
+  //详情里面
   .service{
     position: relative;
     background-color: $bgGay;
@@ -280,6 +281,7 @@ img {
 
   }
 
+  //日历
   .calendar{
     .month{
       width:100%;
@@ -413,4 +415,46 @@ img {
     }
   }
 
+  //城市选择
+  .citys{
+    width:100%;
+    .selected{
+      position: fixed;
+      top:0px;
+      left:0px;
+      width:100%;
+      height:50px;
+      .tip{
+        width:100px;
+      }
+      .selectCity{
+        margin-left:100px;
+        span{
+          padding:5px 10px;
+          border:1px solid $subColor;
+          color: $subColor;
+          border-radius:4px;
+          background-color: rgba(252, 135, 181, 0.22);
+        }
+      }
+
+    }
+    .lists{
+      width:100%;
+      .list{
+        height: 45px;
+        width:100%;
+        border-bottom:1px solid $subTitle;
+        span{
+          display: inline-block;
+          margin-left: 15px;
+          color:$subColor;
+          font-size: 16px;
+        }
+        &:active{
+          @include activeBg;
+        }
+      }
+    }
+  }
 }
