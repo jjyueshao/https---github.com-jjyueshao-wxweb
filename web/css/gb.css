@@ -462,6 +462,13 @@ body{word-wrap:break-word;}
 .mt26{
     margin-top: 26px;
 }
+.mb24{
+    margin-bottom: 24px;
+}
+.br76{
+    border-radius: 76px;
+}
+
 .mt28{
     margin-top: 28px;
 }
@@ -481,6 +488,16 @@ body{word-wrap:break-word;}
     text-align: center;
     color: #ffffff;
     font-size: 40px;
+}
+.h190{
+    height: 190px;
+}
+.w500{
+    width: 500px;
+
+}
+.ml102{
+    margin-left: 102px;
 }
 .pm100{
     margin-top:100px;padding-top: 100px;
@@ -625,6 +642,38 @@ body{word-wrap:break-word;}
     line-height: 24px;
     text-align: center;
 }
+.zh-star{
+    height: 53px;margin-left: 102px;margin-top: 24px;margin-bottom: 50px;
+}
+.zh-star img{
+    margin-left: 40px;
+}
+.h28{
+    height: 28px;
+}
+.ml38{
+    margin-left: 38px;
+}
+.fav40 img{
+    margin-left: 30px;
+}
+.mt42{
+    margin-top: 42px;
+}
+.lh28{
+    line-height: 28px;
+}
+.lh34{
+    line-height: 34px;
 
+}
 
+.note-txt{
+    width: 672px;
+    font-size:28px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-left: 18px;
+    margin-top: 22px;
 
+}
