@@ -11,6 +11,9 @@
 <link href="../css/common.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/lib/jquery-2.1.1.min.js" ></script>
 <script src="../js/utils/city.min.js"></script>
+<script src="../js/pay/iscroll.js"></script>
+<script src="../js/pay/date.js"></script>
+
 <script type="text/javascript">
 	if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
 		var version = parseFloat(RegExp.$1);
@@ -78,6 +81,13 @@
 	};
 
 	$(function () {
+		var d = new Date();
+		var str = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+		$('#beginTime').val(str);
+
+		$('#beginTime').date();
+		$('#endTime').date({theme:"datetime"});
+
 		$(".xuanzediqu").on("click", function () {
 			$(".wrapper").css("display","block").css("height",document.body.scrollHeight);
 		});
@@ -341,7 +351,7 @@
         <div class="tiaokuan">
         	<div class="tk_box">
         		<label id="formyCheckBox" for="modeCheckBox" onclick="changeCheckbox()" class="comList_forCheckbox"></label>
-　　				<input type="checkbox" id="myCheckBox" class="comList_checkbox" />
+　　				<input type="checkbox" id="modeCheckBox" class="comList_checkbox" />
 			</div>
 			<div class="tongyi">同意</div>
             <div class="fuwuxieyi"><a>《26天月子服务》</a></div>

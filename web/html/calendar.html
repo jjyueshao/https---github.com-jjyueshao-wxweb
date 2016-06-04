@@ -115,6 +115,33 @@
             </section>
 
             <script>
+                var oneDay = 86400000;
+                var dataJson = {
+                    "code": 0,
+                    "msg": "success",
+                    "version": "1.0",
+                    "timestamp": 1464025358,
+                    "data": {
+                        "Schedule": [
+                            {
+                                "start_time": 1464025333,
+                                "end_time": 1464111733,
+                                "status": 1
+                            },
+                            {
+                                "start_time": 1464198133,
+                                "end_time": 1464370933,
+                                "status": 3
+                            },
+                            {
+                                "start_time": 1464284533,
+                                "end_time": 1464111733,
+                                "status": 1
+                            }
+                        ]
+                    }
+                };
+
                 $(function () {
                     var calendar = {
                         monthDom:'.js-month',
@@ -206,7 +233,45 @@
 
                     };
 
-                    calendar.init();
+                    //calendar.init();
+
+                    function init(){
+                        var arr = dataJson.data.Schedule;
+                        var obj = changToArr(arr);
+                        calendar.data = obj;
+                        calendar.init();
+                    }
+
+                    init();
+
+                    function changToArr(arr){
+                        var obj = {};
+                        for(var i = 0; i < arr.length; i++){
+                            var itemObj = arr[i];
+                            var start = new Date(itemObj.start_time*1000-itemObj.start_time*1000%oneDay),
+                                    end = new Date(itemObj.end_time*1000-itemObj.end_time*1000%oneDay);
+                            var tmpObj = null;
+                            tmpObj = start;
+                            console.log("itemObj=",tmpObj.getTime(),end.getTime());
+                            while(tmpObj.getTime() <= end.getTime()){
+
+                                console.log("======i",i);
+                                console.log('tmpObj.getTime()=', tmpObj.getTime());
+                                if(!obj[tmpObj.getFullYear()+""]){   //若是存在直接Push
+                                    obj[tmpObj.getFullYear()+""] = {};
+                                }
+                                if(!obj[tmpObj.getFullYear()+""][tmpObj.getMonth()+""]){
+                                    obj[tmpObj.getFullYear()+""][tmpObj.getMonth()+""] = [];
+
+                                }
+                                obj[tmpObj.getFullYear()+""][tmpObj.getMonth()+""].push(tmpObj.getDate());
+                                tmpObj = new Date(tmpObj.getTime()+oneDay);
+                            }
+                        }
+                        console.log(obj);
+                        return obj;
+                    }
+
 
                     $(".leftArrow").on("click", function () {
                         calendar.getLastMonth();
@@ -216,6 +281,8 @@
                         calendar.getNextMonth();
                     })
                 })
+
+
             </script>
 
         </div>

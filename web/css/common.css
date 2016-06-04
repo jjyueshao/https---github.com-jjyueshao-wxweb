@@ -1,6 +1,6 @@
 ﻿body, div, ul, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td { padding:0;margin:0; }
 ul,li{ list-style: none;list-style-type:none;}
-.page {display: none;position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;overflow: hidden;}
+.page {display: none;position: absolute;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;overflow: hidden;}
 
 #datescroll div{float: left;margin-left: 10%;margin-top: 15px;padding-right: 22px;}
 #datescroll_datetime div{float: left;margin-left: 10%;padding-right: 22px;}
@@ -29,8 +29,8 @@ ul,li{ list-style: none;list-style-type:none;}
 #setcancle .quxiao{position: relative;top:-193px;right:-59.9%;} */
 #dateconfirm{position: absolute;left:20px;color:#333;}
 #datecancle{position: absolute;right:20px;width: 40%;color:#333;}
-#dateshadow{display: none;position: absolute;width: 100%;height: 100%;top:0;left:0;background: #000; filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5;}
-#datePage{font-size: 22px; border-radius: 0px; position:absolute;top:50%;margin-right: auto;vertical-align:middle;margin-left: auto;width: 100%;;height: 240px;background: #FFFFFF;z-index:9999999;}
+#dateshadow{z-index: 1;display: none;position: absolute;width: 100%;height: 100%;top:0;left:0;background: #000; filter:alpha(Opacity=50);-moz-opacity:0.5;opacity: 0.5;}
+#datePage{font-size: 22px; border-radius: 0px; position:fixed;margin-right: auto;vertical-align:middle;margin-left: auto;width: 100%;;height: 240px;background: #FFFFFF;z-index:9999999;}
 #datetitle{width: 100%;height:50px;background: #4d4d4d;text-align: center;color: #fff;line-height: 50px;font-size: 20px;font-family:'microsoft yahei';}
 #datetitle h1{font-weight:normal;}
 #datemark{font-size: 18px;left:5%;width: 90%;height: 37px;position:absolute;top:100px;border-top:1px solid #d2d2d2;border-bottom:1px solid #d2d2d2;}
