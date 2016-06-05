@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滴滴月嫂</title>
+    <script type="text/javascript">
+        if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){
+                var phoneScale = parseInt(window.screen.width)/750;
+                document.write('<meta name="viewport" content="width=750, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+            }else{
+                document.write('<meta name="viewport" content="width=750, target-densitydpi=device-dpi">');
+            }
+        }else{
+            document.write('<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+    </script>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="../js/lib/zepto.min.js"></script>
+    <script src="../js/lib/swiper-3.3.1.jquery.min.js"></script>
+</head>
+<body>
+    <section class="wrapper">
+        <section class="pay">
+            <header>
+                <div class="fl logo">
+                    <img src="../images/tx001.png" alt="">
+                </div>
+                <div class="fl content">
+                    <div class="item mt70">
+                        <span class="name">蔡明胶</span><img src="../images/zhifu/renzheng_3x.png" alt="">
+                    </div>
+                    <div class="item">
+                        <span class="text1">服务项目</span> <span class="text2">26天月子项目</span>
+                    </div>
+                </div>
+                <div class="cb"></div>
+            </header>
+
+            <section class="line">
+                <div>服务信息</div>
+            </section>
+            <section class="serviceInfo">
+                <div class="item">
+                    <div class="text">
+                        <div class="key fl">预约时间</div>
+                        <div class="val fl">
+                            <input type="text" placeholder="请选择预约时间 ">
+                        </div>
+                        <div class="cb"></div>
+                        <span class="arrow"></span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="text">
+                        <div class="key fl">宝贝数量</div>
+                        <div class="val fl">
+                            <input type="text" placeholder="请选择预约时间 ">
+                        </div>
+                        <div class="cb"></div>
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <div class="text">
+                        <div class="key fl">服务天数</div>
+                        <div class="val fl">
+                            <input type="text" placeholder="请选择预约时间 ">
+                        </div>
+                        <div class="cb"></div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section class="line">
+                <div>联系信息</div>
+            </section>
+            <section class="serviceInfo">
+                <div class="item">
+                    <div class="text">
+                        <div class="key fl">联系人</div>
+                        <div class="val fl">
+                            <input type="text" placeholder="请选择预约时间 ">
+                        </div>
+                        <div class="cb"></div>
+                        <span class="arrow"></span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="text">
+                        <div class="key fl">联系电话</div>
+                        <div class="val fl">
+                            <input type="text" placeholder="请选择预约时间 ">
+                        </div>
+                        <div class="cb"></div>
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <div class="text">
+                        <div class="key fl">选择地区</div>
+                        <div class="val fl">
+                            <input type="text" placeholder="请选择预约时间 ">
+                        </div>
+                        <div class="cb"></div>
+                        <span class="arrow"></span>
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <div class="text">
+                        <div class="key fl">详细地址</div>
+                        <div class="val fl">
+                            <input type="text" placeholder="请选择预约时间 ">
+                        </div>
+                        <div class="cb"></div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section class="line">
+                <div>费用合计</div>
+            </section>
+            <section class="serviceInfo">
+                <div class="item">
+                    <div class="text">
+                        <div class="key fl">26天月子服务</div>
+                        <div class="val fl" style="width:60%;">
+                            <input type="text" style="text-align: right;" placeholder="请选择预约时间 " value="￥8700元">
+                        </div>
+                        <div class="cb"></div>
+                        <span class="arrow"></span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="text">
+                        <div class="key fl">优惠卷</div>
+                        <div class="val fl" style="width:60%;">
+                            <input type="text" style="text-align: right;" placeholder="请选择预约时间 " value="￥500元">
+                        </div>
+                        <div class="cb"></div>
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <div class="text">
+                        <div class="key fl">待支付</div>
+                        <div class="val fl" style="width:60%;">
+                            <input type="text" style="text-align: right;" placeholder="请选择预约时间 " value="￥8700元">
+                        </div>
+                        <div class="cb"></div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="text">
+                        <span class="tip">温馨提示：月子服务期间，如遇国家法定节假日，需另外支付200元/天。</span>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="line">
+                <div>备注</div>
+            </section>
+            <section class="serviceInfo">
+                <div class="bz_box">
+                    <span>
+                        <textarea  placeholder="备注您的特殊要求，我们会尽量满足。"></textarea>
+                    </span>
+                    <div class="jishu">
+                        <span>0/200</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="tiaokuan">
+                <div class="tk_box">
+                    <label id="formyCheckBox" for="modeCheckBox" onclick="changeCheckbox()" class="comList_forCheckbox"></label>
+                    　　				<input type="checkbox" id="modeCheckBox" class="comList_checkbox">
+                </div>
+                <div class="tongyi">同意</div>
+                <div class="fuwuxieyi"><a>《26天月子服务》</a></div>
+                <div class="tongyi">相关条款</div>
+            </div>
+
+        </section>
+
+
+
+    </section>
+</body>
+</html>

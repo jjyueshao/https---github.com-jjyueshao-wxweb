@@ -300,37 +300,23 @@ img {
       top: 0px;
       left: 0px;
       width: 100%;
-      height: 50px;
-      border-bottom: 1px solid rgba(128, 128, 128, 0.27);
-      background: #FFF;
-      }
+      height: 50px; }
       .wrapper .citys .selected .tip {
-        width: 85px;
-        font-size: 16px;
-        margin: 20px 11px;
-        }
+        width: 100px; }
       .wrapper .citys .selected .selectCity {
-        /* margin-left: 100px; */
-        }
+        margin-left: 100px; }
         .wrapper .citys .selected .selectCity span {
           padding: 5px 10px;
           border: 1px solid #888888;
           color: #888888;
           border-radius: 4px;
-          margin: 15px 5px;
-          display: inline-block;
-          background-color: rgba(252, 135, 181, 0.08);
-          }
+          background-color: rgba(252, 135, 181, 0.22); }
     .wrapper .citys .lists {
-      width: 100%;
-      margin-top: 50px;
-      }
+      width: 100%; }
       .wrapper .citys .lists .list {
         height: 45px;
         width: 100%;
-        border-bottom: 1px solid #b2b2b2;
-        line-height: 45px;
-        }
+        border-bottom: 1px solid #b2b2b2; }
         .wrapper .citys .lists .list span {
           display: inline-block;
           margin-left: 15px;
@@ -338,5 +324,113 @@ img {
           font-size: 16px; }
         .wrapper .citys .lists .list:active {
           background-color: rgba(0, 0, 0, 0.1); }
+  .wrapper .pay {
+    position: relative;
+    width: 100%; }
+    .wrapper .pay header {
+      position: relative;
+      margin: 20px 30px;
+      height: 230px; }
+      .wrapper .pay header .logo {
+        width: 30%;
+        height: 100%;
+        background-image: url(../images/zhifu/yuesao_six.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center; }
+        .wrapper .pay header .logo img {
+          display: inline-block;
+          width: 110px;
+          margin-top: 60px; }
+      .wrapper .pay header .content {
+        width: 70%;
+        height: 100%; }
+        .wrapper .pay header .content .item {
+          width: 100%;
+          font-size: 28px; }
+          .wrapper .pay header .content .item.mt70 {
+            margin-top: 70px; }
+          .wrapper .pay header .content .item .name {
+            color: #333;
+            font-size: 36px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0 15px; }
+          .wrapper .pay header .content .item .text1 {
+            color: #888;
+            display: inline-block;
+            margin: 40px 15px; }
+          .wrapper .pay header .content .item .text2 {
+            color: #333;
+            font-size: 36px;
+            font-weight: bold; }
+    .wrapper .pay .line {
+      position: relative;
+      width: 100%;
+      height: 80px;
+      background-color: #edf0f7;
+      border-top: 1px solid #dfdfdf;
+      border-bottom: 1px solid #dfdfdf; }
+      .wrapper .pay .line div {
+        margin: 0 30px;
+        line-height: 80px;
+        color: #888;
+        font-size: 32px; }
+    .wrapper .pay .serviceInfo {
+      position: relative;
+      width: 100%; }
+      .wrapper .pay .serviceInfo .item {
+        width: 100%;
+        border-bottom: 1px solid #DFDFDF; }
+        .wrapper .pay .serviceInfo .item .text {
+          position: relative;
+          margin: 0 30px;
+          height: 65px;
+          color: #333;
+          padding: 5px 0; }
+          .wrapper .pay .serviceInfo .item .text .tip {
+            font-size: 24px;
+            color: #b2b2b2;
+            line-height: 30px; }
+          .wrapper .pay .serviceInfo .item .text .key {
+            width: 30%;
+            height: 100%;
+            line-height: 65px;
+            display: inline-block;
+            font-size: 32px; }
+          .wrapper .pay .serviceInfo .item .text .val {
+            width: 65%;
+            height: 100%; }
+            .wrapper .pay .serviceInfo .item .text .val input {
+              width: 100%;
+              height: 100%;
+              border: none;
+              font-size: 32px;
+              background-color: transparent; }
+          .wrapper .pay .serviceInfo .item .text .arrow {
+            position: absolute;
+            width: 27px;
+            height: 45px;
+            right: 0px;
+            top: 20px;
+            background-image: url(../images/zhifu/right_3x.png); }
+      .wrapper .pay .serviceInfo .bz_box {
+        margin: 30px;
+        color: #b2b2b2;
+        font-size: 1.5rem;
+        position: relative; }
+        .wrapper .pay .serviceInfo .bz_box textarea {
+          width: 100%;
+          height: 240px;
+          font-size: 32px; }
+        .wrapper .pay .serviceInfo .bz_box .jishu {
+          position: absolute;
+          right: 0;
+          bottom: 10px; }
+      .wrapper .pay .serviceInfo .tiaokuan {
+        width: 100%;
+        border-bottom: 1px solid #dfdfdf;
+        heiht: 80px;
+        margin: 50px 0; }
 
 /*# sourceMappingURL=style.css.map */

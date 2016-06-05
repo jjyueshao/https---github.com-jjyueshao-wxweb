@@ -37,6 +37,12 @@
 			mylabel.innerHTML = "√";
 	}
 
+	$('body').on('touchstart',function(e){
+
+		e.preventDefault();
+		return false;
+	});
+
 	window.onload = function() {
 		$("#danbaotai").click(function () {
 			$("#danbaotai").css("background-color","#ff72ae");
@@ -86,7 +92,7 @@
 		$('#beginTime').val(str);
 
 		$('#beginTime').date();
-		$('#endTime').date({theme:"datetime"});
+		//$('#endTime').date({theme:"datetime"});
 
 		$(".xuanzediqu").on("click", function () {
 			$(".wrapper").css("display","block").css("height",document.body.scrollHeight);

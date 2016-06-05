@@ -24,7 +24,7 @@ body {
   color: #333;
   padding: 0;
   -webkit-user-select: none;
-  width: 375px;
+  width: 750px;
   margin: 0 auto;
   /*box-shadow: rgb(123, 101, 117) 0px 0px 160px 0px;*/
 }
@@ -455,6 +455,147 @@ img {
           @include activeBg;
         }
       }
+    }
+  }
+
+  .pay{
+    position: relative;
+    width:100%;
+
+    //头部
+    header{
+      position: relative;
+      margin: 20px 30px;
+      height: 230px;
+      .logo{
+        width:30%;
+        height: 100%;
+        background-image: url(../images/zhifu/yuesao_six.png);
+        background-repeat:no-repeat;
+        background-position: center;
+        text-align: center;
+        img{
+          display: inline-block;
+          width: 110px;
+          margin-top: 60px;
+        }
+      }
+      .content{
+        width:70%;
+        height: 100%;
+        .item{
+          width:100%;
+          font-size:28px;
+          &.mt70{
+            margin-top: 70px;
+          }
+          .name{
+            color: #333;
+            font-size: 36px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0 15px ;
+          }
+          .text1{
+            color: #888;
+            display: inline-block;
+            margin: 40px 15px;
+          }
+          .text2{
+            color:#333;
+            font-size: 36px;
+            font-weight:bold;
+          }
+        }
+      }
+    }
+
+    //中间隔线
+    .line{
+      position: relative;
+      width:100%;
+      height:80px;
+      background-color: #edf0f7;
+      border-top:1px solid #dfdfdf;
+      border-bottom:1px solid #dfdfdf;
+      div{
+        margin:0 30px;
+        line-height:80px;
+        color:#888;
+        font-size: 32px;
+      }
+    }
+
+    //服务信息
+    .serviceInfo{
+      position: relative;
+      width:100%;
+      .item{
+        width:100%;
+        border-bottom:1px solid #DFDFDF;
+        .text{
+          position: relative;
+          margin:0 30px;
+          height: 65px;
+          color:#333;
+          padding:5px 0;
+          .tip{
+            font-size: 24px;
+            color: #b2b2b2;
+            line-height: 30px;
+          }
+          .key{
+            width:30%;
+            height:100%;
+            line-height: 65px;
+            display: inline-block;
+            font-size: 32px;
+          }
+          .val{
+            width:65%;
+            height:100%;
+            input{
+              width:100%;
+              height:100%;
+              border:none;
+              font-size: 32px;
+              background-color: transparent;
+            }
+          }
+          .arrow{
+            position: absolute;
+            width: 27px;
+            height: 45px;
+            right: 0px;
+            top: 20px;
+            background-image: url(../images/zhifu/right_3x.png);
+          }
+        }
+      }
+
+      .bz_box {
+        margin: 30px;
+        color: #b2b2b2;
+        font-size: 1.5rem;
+        position: relative;
+
+        textarea{
+          width:100%;
+          height: 240px;
+          font-size: 32px;
+        }
+
+        .jishu{position:absolute;right:0;bottom:10px;}
+      }
+
+      .tiaokuan{
+        width:100%;
+        border-bottom:1px solid #dfdfdf;
+        heiht:80px;
+        margin:50px 0;
+
+      }
+
     }
   }
 }
