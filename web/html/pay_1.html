@@ -21,23 +21,196 @@
 
     <script src="../js/lib/zepto.min.js"></script>
     <script src="../js/lib/swiper-3.3.1.jquery.min.js"></script>
+
+    <script src="../js/utils/city.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".js-select-days .option").on("click", function () {
+                $(".js-select-days .option").removeClass("active");
+                $(this).addClass("active");
+                //alert("点击了:"+$(this).data("key"));
+            });
+
+            $(".js-number .option").on("click", function () {
+                $(".js-number .option").removeClass("active");
+                $(this).addClass("active");
+                //alert("点击了:"+$(this).data("key"));
+            });
+
+            $(".js-select-area").on("click", function () {
+                $(".citys").css("display","block").css("height",document.body.scrollHeight);
+            });
+
+            var cityPicker = {
+                cityData : citysArr,    //取自city.min.js
+                selectedDom:'.selectCity',
+                listsDom:'.lists',
+                listDom:'.list',
+                currArea:0, //0:省级,1:区级,2:县级
+                result:'',
+                resultArr:[],
+
+                //初使化
+                init:function () {
+                    this.showProvince(this.cityData.citylist);
+                },
+
+                //绑定事件
+                bindClick:function () {
+                    var self = this;
+                    var size = $(this.listDom).size();
+                    $(this.listDom).off("click").on("click", function () {
+                        var index = parseInt($(this).data("index"));
+                        //alert(self.currArea);
+                        if(self.currArea == 0){ //点击省级
+                            self.result += self.cityData.citylist[index]['p'];
+                            if(self.cityData.citylist[index]['c']){ //含有区级的省
+                                self.currArea = 1;
+                                self.showCity(self.cityData.citylist[index]['c']);
+                                self.resultArr.push(index);
+                            }else{
+                                //alert('到底了,result='+self.result);
+                                self.exitPlugin();
+                            }
+
+                        }else if(self.currArea == 1){   //点击区级
+                            var citys = self.cityData.citylist[self.resultArr[0]]['c'];
+                            self.result += ','+citys[index]['n'];
+                            //alert(citys[index]['a']);
+                            if(citys[index]['a']){//含有县级的区
+                                self.currArea = 2;
+                                self.showCountry(citys[index]['a']);
+                                self.resultArr.push(index);
+                            }else{
+                                //alert('到底了,result='+self.result);
+                                //alert(self.resultArr.join(","));
+                                if(self.resultArr.length == 2){
+                                    self.resultArr.pop();
+                                    self.result = self.result.slice(0,self.result.lastIndexOf(','))
+                                }
+                                self.exitPlugin();
+                            }
+
+                        }else if(self.currArea == 2){   //点击县级
+                            var countries = self.cityData.citylist[self.resultArr[0]]['c'][self.resultArr[1]]['a'];
+                            if(self.resultArr.length == 3){
+                                self.resultArr.pop();
+                                self.result = self.result.slice(0,self.result.lastIndexOf(','))
+                            }
+                            self.result += ','+countries[index]['s'];
+                            self.resultArr.push(index);
+                            //alert('到底了,result='+self.result);
+                            self.exitPlugin();
+                        }
+                        self.showResult();
+                    })
+                },
+
+                //重载
+                reload:function () {
+                    $(this.listsDom).html('');
+                },
+
+                //退出插件
+                exitPlugin:function () {
+                    $(".citys").css("display","none");
+                    $(".js-select-area").html(this.result.replace(/,/g,' ')).css("color","#333");
+                },
+
+                //显示结果
+                showResult:function () {
+                    $(this.selectedDom).html('');
+                    if(this.result == '') return;
+                    var str = this.result;
+                    console.log('str='+str);
+                    var arr = str.split(',');
+                    var tmp = '';
+                    console.log('arr',arr.length);
+                    for(var i = 0; i < arr.length; i++){
+                        tmp += '<span data-key="'+i+'">'+arr[i]+'</span>';
+                    }
+                    $(this.selectedDom).html(tmp);
+                    this.bindSelected();
+                },
+
+                bindSelected:function () {
+                    var self = this;
+                    $(this.selectedDom).find("span").off("click").on("click", function () {
+                        var key = $(this).data("key");
+                        if(key == 0){   //到省级
+                            self.showProvince(self.cityData.citylist);
+                            self.result = '';
+                            self.resultArr = [];
+                            self.currArea = 0;
+                        }else if(key == 1){ //到区级
+                            self.showCity(self.cityData.citylist[self.resultArr[0]]['c']);
+                            var tmp = self.resultArr.shift();
+                            self.resultArr = [];
+                            self.resultArr.push(tmp);
+                            self.result = self.result.split(",")[0];
+                            self.currArea = 1;
+                        }
+                        self.showResult();
+                    })
+                },
+
+                //显示省份
+                showProvince:function (arr) {
+                    var str = '';
+                    for(var i =0,len=arr.length;i<len; i++){
+                        str += '<li class="list" data-index="'+i+'"><span>'+arr[i]['p']+'</span> </li>'
+                    }
+                    $(this.listsDom).html(str);
+                    this.bindClick();
+                },
+
+                //显示区级
+                showCity:function (arr) {
+                    this.reload();
+                    var str = '';
+                    for(var i = 0;i<arr.length; i++){
+                        str += '<li class="list" data-index="'+i+'"><span>'+arr[i]['n']+'</span> </li>'
+                    }
+                    $(this.listsDom).html(str);
+                    this.bindClick();
+                },
+
+                //显示县级
+                showCountry:function (arr) {
+                    this.reload();
+                    var str = '';
+                    for(var i = 0;i<arr.length; i++){
+                        str += '<li class="list" data-index="'+i+'"><span>'+arr[i]['s']+'</span> </li>'
+                    }
+                    $(this.listsDom).html(str);
+                    this.bindClick();
+                }
+            };
+            cityPicker.init();
+
+        })
+    </script>
 </head>
 <body>
     <section class="wrapper">
         <section class="pay">
             <header>
-                <div class="fl logo">
-                    <img src="../images/tx001.png" alt="">
-                </div>
-                <div class="fl content">
-                    <div class="item mt70">
-                        <span class="name">蔡明胶</span><img src="../images/zhifu/renzheng_3x.png" alt="">
+                <div class="contents">
+                    <div class="fl logo">
+                        <img src="../images/tx001.png" alt="">
                     </div>
-                    <div class="item">
-                        <span class="text1">服务项目</span> <span class="text2">26天月子项目</span>
+                    <div class="fl content">
+                        <div class="item mt70">
+                            <span class="name">蔡明胶</span><img src="../images/zhifu/renzheng_3x.png" alt="">
+                        </div>
+                        <div class="item">
+                            <span class="text1">服务项目</span> <span class="text2">26天月子项目</span>
+                        </div>
                     </div>
+                    <div class="cb"></div>
                 </div>
-                <div class="cb"></div>
+
             </header>
 
             <section class="line">
@@ -50,28 +223,39 @@
                         <div class="val fl">
                             <input type="text" placeholder="请选择预约时间 ">
                         </div>
+                        <div class="arrow"></div>
                         <div class="cb"></div>
-                        <span class="arrow"></span>
                     </div>
+
                 </div>
 
                 <div class="item">
                     <div class="text">
                         <div class="key fl">宝贝数量</div>
                         <div class="val fl">
-                            <input type="text" placeholder="请选择预约时间 ">
                         </div>
                         <div class="cb"></div>
                     </div>
-
+                    <div class="options js-number">
+                        <div class="option" data-key="0">单胞胎</div>
+                        <div class="option" data-key="1">双胞胎</div>
+                        <div class="cb"></div>
+                    </div>
                 </div>
+
+
 
                 <div class="item">
                     <div class="text">
                         <div class="key fl">服务天数</div>
                         <div class="val fl">
-                            <input type="text" placeholder="请选择预约时间 ">
                         </div>
+                        <div class="cb"></div>
+                    </div>
+                    <div class="options js-select-days">
+                        <div class="option" data-key="0">26天</div>
+                        <div class="option" data-key="1">42天</div>
+                        <div class="option" data-key="2">78天</div>
                         <div class="cb"></div>
                     </div>
 
@@ -87,10 +271,9 @@
                     <div class="text">
                         <div class="key fl">联系人</div>
                         <div class="val fl">
-                            <input type="text" placeholder="请选择预约时间 ">
+                            <input type="text" placeholder="请输入联系人名字 ">
                         </div>
                         <div class="cb"></div>
-                        <span class="arrow"></span>
                     </div>
                 </div>
 
@@ -98,7 +281,7 @@
                     <div class="text">
                         <div class="key fl">联系电话</div>
                         <div class="val fl">
-                            <input type="text" placeholder="请选择预约时间 ">
+                            <input type="text" placeholder="请输入联系电话 ">
                         </div>
                         <div class="cb"></div>
                     </div>
@@ -109,7 +292,8 @@
                     <div class="text">
                         <div class="key fl">选择地区</div>
                         <div class="val fl">
-                            <input type="text" placeholder="请选择预约时间 ">
+                            <span class="js-select-area">请选择预约地区</span>
+
                         </div>
                         <div class="cb"></div>
                         <span class="arrow"></span>
@@ -121,7 +305,7 @@
                     <div class="text">
                         <div class="key fl">详细地址</div>
                         <div class="val fl">
-                            <input type="text" placeholder="请选择预约时间 ">
+                            <input type="text" placeholder="请输入详细地址 ">
                         </div>
                         <div class="cb"></div>
                     </div>
@@ -160,7 +344,7 @@
                     <div class="text">
                         <div class="key fl">待支付</div>
                         <div class="val fl" style="width:60%;">
-                            <input type="text" style="text-align: right;" placeholder="请选择预约时间 " value="￥8700元">
+                            <input type="text" style="text-align: right; color:red;" placeholder="请选择预约时间 " value="￥8700元">
                         </div>
                         <div class="cb"></div>
                     </div>
@@ -188,20 +372,35 @@
                 </div>
             </section>
 
-            <div class="tiaokuan">
-                <div class="tk_box">
-                    <label id="formyCheckBox" for="modeCheckBox" onclick="changeCheckbox()" class="comList_forCheckbox"></label>
-                    　　				<input type="checkbox" id="modeCheckBox" class="comList_checkbox">
+            <section class="serviceInfo">
+                <div class="tiaokuan">
+                    <div class="tk_box">
+                        <label id="formyCheckBox" for="modeCheckBox" onclick="changeCheckbox()" class="comList_forCheckbox"></label>
+                        <input type="checkbox" id="modeCheckBox" class="comList_checkbox">
+                    </div>
+                    <div class="tongyi">同意</div>
+                    <div class="fuwuxieyi"><a>《26天月子服务》</a></div>
+                    <div class="tongyi">相关条款</div>
                 </div>
-                <div class="tongyi">同意</div>
-                <div class="fuwuxieyi"><a>《26天月子服务》</a></div>
-                <div class="tongyi">相关条款</div>
-            </div>
+            </section>
+
+
+            <section class="btnInfo">
+                <button class="submit">提交订单</button>
+            </section>
 
         </section>
 
-
-
+        <section class="citys">
+            <div class="selected">
+                <div class="tip fl"><span>请点击选择:</span></div>
+                <div class="selectCity fl"></div>
+                <div class="cb"></div>
+            </div>
+            <ul class="lists">
+            </ul>
+        </section>
     </section>
+
 </body>
 </html>
