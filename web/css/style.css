@@ -321,7 +321,9 @@ img {
           color: #888888;
           border-radius: 4px;
           font-size: 30px;
-          background-color: rgba(252, 135, 181, 0.22); }
+          background-color: rgba(252, 135, 181, 0.22);
+          /* display: inline-block; */
+          margin-right: 20px; }
     .wrapper .citys .lists {
       width: 100%;
       background-color: #FFF;

@@ -25,6 +25,7 @@
     <script src="../js/utils/city.min.js"></script>
 
     <script>
+
         $(function () {
             $(".js-select-days .option").on("click", function () {
                 $(".js-select-days .option").removeClass("active");
@@ -68,6 +69,7 @@
                             if(self.cityData.citylist[index]['c']){ //含有区级的省
                                 self.currArea = 1;
                                 self.showCity(self.cityData.citylist[index]['c']);
+                                self.gotoTop(0);
                                 self.resultArr.push(index);
                             }else{
                                 //alert('到底了,result='+self.result);
@@ -76,12 +78,13 @@
 
                         }else if(self.currArea == 1){   //点击区级
                             var citys = self.cityData.citylist[self.resultArr[0]]['c'];
-                            self.result += ','+citys[index]['n'];
                             //alert(citys[index]['a']);
                             if(citys[index]['a']){//含有县级的区
                                 self.currArea = 2;
                                 self.showCountry(citys[index]['a']);
+                                
                                 self.resultArr.push(index);
+                                self.result += ','+citys[index]['n'];
                             }else{
                                 //alert('到底了,result='+self.result);
                                 //alert(self.resultArr.join(","));
@@ -89,6 +92,8 @@
                                     self.resultArr.pop();
                                     self.result = self.result.slice(0,self.result.lastIndexOf(','))
                                 }
+                                self.result += ','+citys[index]['n'];
+                                self.resultArr.push(index);
                                 self.exitPlugin();
                             }
 
@@ -105,11 +110,17 @@
                         }
                         self.showResult();
                     })
+                    self.gotoTop(0);
                 },
 
                 //重载
                 reload:function () {
                     $(this.listsDom).html('');
+                },
+
+                gotoTop:function (val) {
+                    console.log($("body").scrollTop());
+                    $("body").scrollTop(0);
                 },
 
                 //退出插件
@@ -140,11 +151,13 @@
                         var key = $(this).data("key");
                         if(key == 0){   //到省级
                             self.showProvince(self.cityData.citylist);
+                            self.gotoTop(0);
                             self.result = '';
                             self.resultArr = [];
                             self.currArea = 0;
                         }else if(key == 1){ //到区级
                             self.showCity(self.cityData.citylist[self.resultArr[0]]['c']);
+                            self.gotoTop(0);
                             var tmp = self.resultArr.shift();
                             self.resultArr = [];
                             self.resultArr.push(tmp);

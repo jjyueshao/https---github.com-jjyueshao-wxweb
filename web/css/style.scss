@@ -442,12 +442,14 @@ img {
       .selectCity{
         margin-left:20px;
         span{
-          padding:10px 20px;
-          border:1px solid $subColor;
-          color: $subColor;
-          border-radius:4px;
-          font-size:30px;
+          padding: 10px 20px;
+          border: 1px solid #888888;
+          color: #888888;
+          border-radius: 4px;
+          font-size: 30px;
           background-color: rgba(252, 135, 181, 0.22);
+          /* display: inline-block; */
+          margin-right: 20px;
         }
       }
 
